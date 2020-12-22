@@ -1,10 +1,15 @@
 import '../css/style.css';
 import PlayerBlock from './player.js'
+import Btn from './button.js'
 function videoBoard() {
   return (
-    <div className="video-board">
-        <PlayerBlock />
+    <div>
+        <Btn />
+      <div className="video-board">
+         <PlayerBlock />
+      </div>
     </div>
+   
   );
 }
 
