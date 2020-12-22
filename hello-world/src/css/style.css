@@ -1,0 +1,27 @@
+.player-block {
+    width: 250px;
+    border: 1px solid #565656;
+}
+
+.player-block .img {
+    width: 100%;
+}
+
+.player-block .img img {
+    width: 100%;
+}
+
+.player-block .text {
+    width: 100%;
+    text-align: center;
+}
+
+.player-block .text span {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.video-board {
+    display: flex;
+    justify-content: center;
+}
