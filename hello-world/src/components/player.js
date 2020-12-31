@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import { render } from '@testing-library/react';
 import _axios from "axios"
 import axios from 'axios';
+import Unit from './unit'
 
 class player_block extends Component {
     constructor() {
@@ -46,20 +47,10 @@ class player_block extends Component {
         }
     }
     render(){
-      var temp = (t) => t.weatherElement[2].time.map(v=>{
-        return <div key={v.dataTime}>
-                  <p>dateTime:{v.dataTime}</p>
-                  <p>{v.elementValue[0].measures}:{v.elementValue[0].value}</p>
-              </div>
-      })
-       
-      
       const listItem = this.state.info.location.map((v)=>{
-        console.log('check loca', v)
-        const tempList = temp(v)
+        
         return <div key={v.locationName}>
-                <h3 >{v.locationName}</h3>
-                <div>{tempList}</div>
+               <Unit unit_info={v}/>
         </div>
       })
       return <div>

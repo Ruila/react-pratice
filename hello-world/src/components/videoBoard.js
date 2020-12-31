@@ -12,10 +12,10 @@ class videoBoard extends Component {
     this.changeArea=this.changeArea.bind(this);
   } 
     changeArea(area){
-      console.log('has change', area, this.state.currentArea);
+      // console.log('has change', area, this.state.currentArea);
       this.setState({currentArea: area})
         // this.state.currentArea = area;
-        console.log('after has change ', this.state.currentArea);
+        // console.log('after has change ', this.state.currentArea);
   }
   render(){
     return(
