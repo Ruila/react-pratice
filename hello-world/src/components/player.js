@@ -25,37 +25,39 @@ class player_block extends Component {
     }
     check(){
       this.setState({area: this.props.area})
-      // console.log("check props", this.state.area, this.props.area)
+      console.log("check props", this.state.area, this.props.area)
       this.getData();
     }
     getData(){
-      let list = []
-      axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.locationDict[this.state.area]}?Authorization=`)
+      axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.locationDict[this.props.area]}?Authorization=CWB-66C1A43E-5E26-4909-8121-A12C192396ED`)
       .then((v)=>{
-        // console.log(v);
+        console.log('qq', v);
         this.setState({info: v.data.records.locations[0]})
-        console.log(this.state.info)
+        // console.log(this.state.info)
       })
     }
     componentDidMount(){
       this.getData();
+
     }
     componentDidUpdate(prevProps, prevState, snapshot){
-      // console.log("check props11111", prevProps.area, this.props.area)
+      console.log("componentDidUpdate", prevProps.area, this.props.area)
       if(prevProps.area!==this.props.area){
         this.check();
+        console.log("inside componentDidUpdate", prevProps.area, this.props.area)
         }
     }
     render(){
       const listItem = this.state.info.location.map((v)=>{
         
-        return <div key={v.locationName}>
-               <Unit unit_info={v}/>
-        </div>
+        return <Unit key={v.locationName} unit_info={v}/>
       })
       return <div>
-                <h1>{this.state.info.locationsName}未來兩天天氣預報</h1>
-                {listItem}
+                <h1>{this.state.area}未來兩天天氣預報</h1>
+                <div className="container">
+                  {listItem}
+                </div>
+               
         
         </div>
     }

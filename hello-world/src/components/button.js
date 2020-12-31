@@ -11,7 +11,6 @@ class vbtn extends Component  {
     this.search=this.search.bind(this);
   }
   handleChange(event){
-    console.log(event.target.value, this.state.inputValue);
     this.setState({inputValue: event.target.value});
     
   }
