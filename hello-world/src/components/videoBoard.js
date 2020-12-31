@@ -7,7 +7,7 @@ class videoBoard extends Component {
   constructor(props) {
     super(props);
     this.state={ 
-      currentArea: "HH",
+      currentArea: "臺南市",
     }
     this.changeArea=this.changeArea.bind(this);
   } 

@@ -5,7 +5,7 @@ class vbtn extends Component  {
   constructor() {
     super();
     this.state = {
-      inputValue: "GG",
+      inputValue: "臺南市",
     }
     this.handleChange=this.handleChange.bind(this);
     this.search=this.search.bind(this);
