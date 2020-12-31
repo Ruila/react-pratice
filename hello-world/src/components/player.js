@@ -29,7 +29,7 @@ class player_block extends Component {
       this.getData();
     }
     getData(){
-      axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.locationDict[this.props.area]}?Authorization=CWB-66C1A43E-5E26-4909-8121-A12C192396ED`)
+      axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.locationDict[this.props.area]}?Authorization=`)
       .then((v)=>{
         console.log('qq', v);
         this.setState({info: v.data.records.locations[0]})
