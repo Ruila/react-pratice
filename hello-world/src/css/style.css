@@ -60,3 +60,23 @@ h1 {
     border-radius: 10px;
     margin: 40px;
 }
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input{
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.hide {
+    display: none;
+}
+
+.width-100{
+    width: 100%;
+}

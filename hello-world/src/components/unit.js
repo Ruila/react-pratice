@@ -5,20 +5,25 @@ class unit extends Component {
   constructor(props) {
     super(props);
     this.state={ 
-        unit_info:{}
+        unit_info:{},
+        visible: false
     }
+
+    this.checkbox=this.checkbox.bind(this);
+  }
+
+  checkbox(e){
+    console.log(e.target.checked)
+    this.setState({ visible: e.target.checked});
   }
   componentDidMount(){
     this.setState({unit_info: this.props.unit_info})
   }
   componentDidUpdate(prevProps, prevState, snapshot){
-    // console.log("check props11111", this.props.unit_info)
-    // if(prevProps.unit_info!==this.props.unit_info){
-    //   this.check();
-    //   console.log(';;;')
-    //   }
+  
   }
   render(){
+    const {visible} = this.state;
     const listItem = this.props.unit_info.weatherElement[2].time.map((v)=>{
         return(
             <div key={v.dataTime} className="tempblock">
@@ -29,8 +34,15 @@ class unit extends Component {
     })
     return(  
             <div className="col-md-4">
-                <h3>地區：{this.props.unit_info.locationName}</h3>
-                {listItem}
+                <div className="title">
+                  <h3>地區：{this.props.unit_info.locationName}</h3>
+                  <input type="checkbox" value={this.props.unit_info.locationName} onChange={this.checkbox}></input>
+                  
+                </div>
+                <div className={`collapse ${visible?'':'hide'}`}>
+                   {listItem}
+                </div>
+                
             </div>
         );
   }
