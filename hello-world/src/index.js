@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import PlayerBoard from './components/videoBoard.js'
 import reportWebVitals from './reportWebVitals';
+import Loading from './components/loading.js'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <PlayerBoard/>
+    <App />
+
   </React.StrictMode>,
   document.getElementById('root')
 );
