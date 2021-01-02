@@ -24,14 +24,24 @@ class unit extends Component {
   }
   render(){
     const {visible} = this.state;
-    const listItem = this.props.unit_info.weatherElement[2].time.map((v)=>{
+    const listItem = this.props.unit_info.weatherElement[2].time.map((v, idx)=>{
+        const weather = this.props.unit_info.weatherElement[1].time[idx].elementValue[0].value
         return(
-            <div key={v.dataTime} className="tempblock">
+            <div key={v.dataTime} className={`tempblock ${weather==='晴'?'sun-color':'not-sun-color'}`}>
                 <p>時間：{v.dataTime}</p>
-                <p>溫度：{v.elementValue[0].value}({v.elementValue[0].measures})</p>
+                <p>天氣：{weather}</p>
+                <p>體感溫度：{v.elementValue[0].value}({v.elementValue[0].measures})</p>
             </div>
         )
     })
+  //   const wea_listItem = this.props.unit_info.weatherElement[1].time.map((v)=>{
+  //     return(
+  //         <div key={v.dataTime} className="tempblock">
+  //             <p>時間：{v.dataTime}</p>
+  //             <p>體感溫度：{v.elementValue[0].value}({v.elementValue[0].measures})</p>
+  //         </div>
+  //     )
+  // })
     return(  
             <div className="col-md-4">
                 <div className="title">

@@ -49,25 +49,32 @@ p {
 
 h3 {
     text-align: center;
+    color: #272727;
 }
 
 h1 {
     text-align: center;
+    color: #272727;
 }
 
 .tempblock {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
     margin: 40px;
+    padding: 10px
 }
 
-.title{
+.tempblock p {
+    /* color: #ffffff; */
+}
+
+.title {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.input{
+.input {
     position: absolute;
     right: 0;
     top: 15px;
@@ -77,6 +84,64 @@ h1 {
     display: none;
 }
 
-.width-100{
+.width-100 {
     width: 100%;
+}
+
+body {
+    /* background-color: #b3dcff; */
+}
+
+.weatherImg {
+    width: 50px;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sun-color {
+    background-color: #f8d14c;
+}
+
+.not-sun-color {
+    background-color: #48b5ff;
+}
+
+.note{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10%;
+}
+.note .sunblock{
+    width: 20px;
+    height: 20px;
+    background-color: #f8d14c;
+    border: 1px solid #565656;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.note .notsunblock{
+    width: 20px;
+    height: 20px;
+    background-color: #48b5ff;
+    border: 1px solid #565656;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+input{
+    height: 25px;
+}
+
+button{
+    background-color: #5a5a5a;
+    color: #ffffff;
+    border: 1px solid #ffffff00;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
 }

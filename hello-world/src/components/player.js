@@ -1,5 +1,5 @@
 import '../css/style.css';
-import videoimg from '../images/c-mobile-tamou-logo-draw.jpg';
+import weatherImg from '../images/cloudy.png';
 import Api from "../api/youtubeApi.js";
 import React, {Component} from 'react';
 import { render } from '@testing-library/react';
@@ -74,7 +74,16 @@ class player_block extends Component {
         return <Unit key={v.locationName} unit_info={v}/>
       })
       return <div className="width-100">
-                <h1>{this.state.area}未來兩天天氣預報</h1>
+                <div className="top">
+                  <img className="weatherImg" src={weatherImg} />
+                  <h1>{this.state.area}未來兩天天氣預報</h1>
+                  <div className="note">
+                      <div className="sunblock"></div>
+                      <span>出太陽好天氣</span>
+                      <div className="notsunblock"></div>
+                      <span>沒出太陽壞天氣</span>
+                  </div>
+                </div>
                 <div className="container">
                   {listItem}
                 </div>
