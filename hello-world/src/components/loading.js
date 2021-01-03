@@ -1,6 +1,6 @@
 import '../css/style.css';
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux'
 class loading extends Component  {
   constructor() {
     super();
@@ -12,7 +12,7 @@ class loading extends Component  {
   
   render(){
     return (
-      <div className="loading">
+      <div className={`loading ${this.props.load?'':'hide'}`}>
         <h1>Loading............</h1>
          <div className="overlay"></div>
          
@@ -23,4 +23,10 @@ class loading extends Component  {
   } 
 }
 
-export default loading;
+function mapStateToProps(state) {
+  return {
+    load: state.load
+  }
+}
+
+export default connect(mapStateToProps)(loading);

@@ -1,6 +1,6 @@
 import '../css/style.css';
 import weatherImg from '../images/cloudy.png';
-import Api from "../api/youtubeApi.js";
+import {apikey} from "../api/apikey.js";
 import React, {Component} from 'react';
 import { render } from '@testing-library/react';
 import _axios from "axios"
@@ -50,7 +50,7 @@ class player_block extends Component {
       this.getData();
     }
     getData(){
-      axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.locationDict[this.props.area]}?Authorization=`)
+      axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.locationDict[this.props.area]}?Authorization=${apikey}`)
       .then((v)=>{
         console.log('qq', v);
         this.setState({info: v.data.records.locations[0]})
@@ -75,7 +75,7 @@ class player_block extends Component {
       })
       return <div className="width-100">
                 <div className="top">
-                  <img className="weatherImg" src={weatherImg} />
+                  <img className="weatherImg" src={weatherImg} alt="weather"/>
                   <h1>{this.state.area}未來兩天天氣預報</h1>
                   <div className="note">
                       <div className="sunblock"></div>

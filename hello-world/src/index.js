@@ -2,15 +2,41 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import PlayerBoard from './components/videoBoard.js'
 import reportWebVitals from './reportWebVitals';
-import Loading from './components/loading.js'
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+const initialState = {
+  load: false
+};
+
+function reducer(state = initialState, action) {
+  switch(action.type){
+    case 'Loading':
+      return{
+        load: true
+      };
+    case 'Done':
+      return {
+        load: false
+      };
+    default:
+      return{
+        load: false
+      };
+  }
+}
+
+const store = createStore(reducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
+  // <React.StrictMode>
+  //   <App />
 
-  </React.StrictMode>,
+  // </React.StrictMode>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 
