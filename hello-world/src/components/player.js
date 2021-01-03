@@ -6,6 +6,7 @@ import { render } from '@testing-library/react';
 import _axios from "axios"
 import axios from 'axios';
 import Unit from './unit'
+import { connect } from 'react-redux'
 
 class player_block extends Component {
     constructor() {
@@ -50,11 +51,15 @@ class player_block extends Component {
       this.getData();
     }
     getData(){
+      this.props.dispatch({type: 'Loading'});
       axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.locationDict[this.props.area]}?Authorization=${apikey}`)
       .then((v)=>{
         console.log('qq', v);
         this.setState({info: v.data.records.locations[0]})
         // console.log(this.state.info)
+       
+      }).then(()=>{
+        this.props.dispatch({type: 'Done'});
       })
     }
     componentDidMount(){
@@ -91,4 +96,12 @@ class player_block extends Component {
     }
 }
 
-export default player_block;
+
+function mapStateToProps(state) {
+  return {
+    load: state.load
+  }
+}
+
+export default connect(mapStateToProps)(player_block);
+// export default player_block;
