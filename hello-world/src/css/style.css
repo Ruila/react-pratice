@@ -181,3 +181,8 @@ button{
     display: flex;
     align-items: center;
 }
+
+.alert {
+    color: red;
+    margin-left: 30px;
+}
