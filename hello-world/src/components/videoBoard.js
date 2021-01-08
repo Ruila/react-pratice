@@ -18,9 +18,9 @@ class videoBoard extends Component {
   render(){
     return(
       <div>
-        <Btn area={this.state.currentArea} changeArea={this.changeArea}/>
+        <Btn data-testid="btn" area={this.state.currentArea} changeArea={this.changeArea}/>
         <div className="video-board">
-          <PlayerBlock area={this.state.currentArea}/>
+          <PlayerBlock data-testid="data-block" area={this.state.currentArea}/>
         </div>
       </div>
     );

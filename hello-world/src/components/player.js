@@ -2,8 +2,6 @@ import '../css/style.css';
 import weatherImg from '../images/cloudy.png';
 import {apikey} from "../api/apikey.js";
 import React, {Component} from 'react';
-import { render } from '@testing-library/react';
-import _axios from "axios"
 import axios from 'axios';
 import Unit from './unit'
 import { connect } from 'react-redux'
