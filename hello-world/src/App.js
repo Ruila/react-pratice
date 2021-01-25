@@ -1,6 +1,6 @@
 import './App.css';
-import Loading from './components/loading.js'
-import PlayerBoard from './components/videoBoard.js'
+import Loading from './twoDaysWeatherComponents/loading.js'
+import PlayerBoard from './twoDaysWeatherComponents/videoBoard.js'
 
 import React, { Component } from 'react';
 
@@ -16,8 +16,7 @@ class App extends Component  {
   render(){
     return (
       <div className="App">
-        <PlayerBoard/>
-        <Loading/>
+       gg
     </div>
     );
   } 
