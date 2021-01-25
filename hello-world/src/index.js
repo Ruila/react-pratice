@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Loading from './twoDaysWeatherComponents/loading.js'
+import Nav from './components/nav.js'
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -35,7 +36,8 @@ ReactDOM.render(
 
   // </React.StrictMode>,
   <Provider store={store}>
-    <App />
+    <Nav />
+    <Loading />
   </Provider>,
   document.getElementById('root')|| document.createElement('div')
 );
