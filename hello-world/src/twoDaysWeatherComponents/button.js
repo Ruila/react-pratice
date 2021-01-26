@@ -26,8 +26,9 @@ class vbtn extends Component  {
     this.state.locationDict.map((v)=>{
       if(v===this.state.inputValue){
         flag = 1;
-        
+        return true;
       }
+      return false;
     })
     console.log('flag', flag)
     if(flag){
