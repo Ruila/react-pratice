@@ -1,8 +1,11 @@
 import './App.css';
-import Loading from './components/loading.js'
-import PlayerBoard from './components/videoBoard.js'
-
+import Nav from './components/nav.js';
+import Login from './components/Login/login.js';
+import Home from './components/Home/home.js';
+import Weather from './twoDaysWeatherComponents/videoBoard.js'
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { HashRouter, Route, Link } from "react-router-dom";
 
 class App extends Component  {
   constructor() {
@@ -12,16 +15,32 @@ class App extends Component  {
     }
     
   }
+  componentDidMount (){
+    console.log('in app js', this.props.loginCheck)
+  }
+  checkLoginState(){
+
+  }
   
   render(){
     return (
-      <div className="App">
-        <PlayerBoard/>
-        <Loading/>
-    </div>
+      <HashRouter>
+       <div className="App">
+        <Nav />
+      </div>
+      <Route path="/login" component={Login} />
+      <Route exact path="/" component={Home} />
+      <Route path="/weather" component={Weather} />
+  </HashRouter>
     );
   } 
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    loginCheck: state.loginCheck
+  }
+}
 
+export default connect(mapStateToProps)(App);
+// export default player_block;

@@ -1,18 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Loading from './twoDaysWeatherComponents/loading.js'
+import Loading from './twoDaysWeatherComponents/loading.js';
+import App from './App.js';
 import Nav from './components/nav.js'
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 const initialState = {
-  load: false
+  load: false,
+  loginCheck: false,
 };
 
 function reducer(state = initialState, action) {
   switch(action.type){
+    case 'Login':
+      return {
+        loginCheck: true
+      }
     case 'Loading':
       return{
         load: true
@@ -23,7 +29,8 @@ function reducer(state = initialState, action) {
       };
     default:
       return{
-        load: false
+        load: false,
+        loginCheck: false,
       };
   }
 }
@@ -36,7 +43,7 @@ ReactDOM.render(
 
   // </React.StrictMode>,
   <Provider store={store}>
-    <Nav />
+    <App />
     <Loading />
   </Provider>,
   document.getElementById('root')|| document.createElement('div')
