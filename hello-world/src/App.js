@@ -25,13 +25,10 @@ class App extends Component  {
   render(){
     return (
       <HashRouter>
-       <div className="App">
-        <Nav />
-      </div>
-      <Route path="/login" component={Login} />
-      <Route exact path="/" component={Home} />
-      <Route path="/weather" component={Weather} />
-  </HashRouter>
+        <Route exact path="/" component={Home} />
+        <Route path="/weather" component={Weather} />
+        <Route path="/login" component={Login} />
+      </HashRouter>
     );
   } 
 }

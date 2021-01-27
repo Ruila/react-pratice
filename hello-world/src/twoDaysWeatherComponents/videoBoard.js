@@ -2,7 +2,8 @@ import '../css/style.css';
 import PlayerBlock from './player.js'
 import Btn from './button.js'
 import React, { Component } from 'react';
-
+import { Redirect } from "react-router-dom";
+import { connect } from 'react-redux';
 
 class videoBoard extends Component {
   constructor(props) {
@@ -16,15 +17,28 @@ class videoBoard extends Component {
       this.setState({currentArea: area})
   }
   render(){
-    return(
-      <div>
-        <Btn data-testid="btn" area={this.state.currentArea} changeArea={this.changeArea}/>
-        <div className="video-board">
-          <PlayerBlock data-testid="data-block" area={this.state.currentArea}/>
+    if(this.props.loginCheck){
+      return(
+        <div>
+          <Btn data-testid="btn" area={this.state.currentArea} changeArea={this.changeArea}/>
+          <div className="video-board">
+            <PlayerBlock data-testid="data-block" area={this.state.currentArea}/>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <Redirect to={'/login'} />
+     );
+    }
   }
 }
 
-export default videoBoard;
+function mapStateToProps(state) {
+  return {
+    loginCheck: state.loginCheck
+  }
+}
+
+export default connect(mapStateToProps)(videoBoard);
+// export default player_block;

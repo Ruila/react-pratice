@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 
 class Nav extends Component  {
@@ -13,7 +13,7 @@ class Nav extends Component  {
 
   componentDidMount (){
     console.log('in nav js', this.props.loginCheck)
-
+    
   }
   
   render(){
