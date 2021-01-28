@@ -5,9 +5,33 @@ class Login extends Component  {
   constructor() {
     super();
     this.state = {
-     
+      account: "d",
+      password: "d",
     }
+    this.checkLogin=this.checkLogin.bind(this);
+    this.handleAccount=this.handleAccount.bind(this);
+    this.handlePassword=this.handlePassword.bind(this);
     
+  }
+
+  componentDidMount () {
+    console.log(this.state.account)
+  }
+
+  handleAccount (){
+
+  }
+
+  handlePassword (){
+
+  }
+
+
+  checkLogin(){
+      if (this.state.account === "a" && this.state.password === 'b') {
+        this.props.dispatch({type: 'Login'});
+      }
+      console.log(this.state.account)
   }
   
   render(){
@@ -18,13 +42,13 @@ class Login extends Component  {
                    <h1>Sign in</h1>
                </div>
                 <div>
-                    <input placeholder="account" />
+                    <input value={this.state.account} onChange={this.handleAccount} type="text" />
                 </div>
                 <div>
-                    <input placeholder="password" />
+                    <input value={this.state.password} onChange={this.handlePassword} type="text" />
                 </div>
                 <div className="btn">
-                    <span>login</span>
+                    <span onClick={this.checkLogin}>login</span>
                 </div>
            </div>
            
