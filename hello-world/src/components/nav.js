@@ -21,8 +21,8 @@ class Nav extends Component  {
             <div className="m-nav">
                 <ul>
                     <li><Link to="/">Home</Link></li>
+                    <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/weather">Weather</Link></li>
-                    <li><Link to="/login">Login</Link></li>
                 </ul>
                 <hr />
             </div>

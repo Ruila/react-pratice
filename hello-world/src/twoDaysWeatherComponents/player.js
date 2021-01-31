@@ -49,7 +49,8 @@ class player_block extends Component {
       this.getData();
     }
     getData(){
-      this.props.dispatch({type: 'Loading'});
+      // this.props.dispatch({type: 'Loading'});
+      console.log('after loading', this.props.loginCheck)
       axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.locationDict[this.props.area]}?Authorization=${apikey}`)
       .then((v)=>{
         console.log('qq', v);
@@ -57,7 +58,8 @@ class player_block extends Component {
         // console.log(this.state.info)
        
       }).then(()=>{
-        this.props.dispatch({type: 'Done'});
+        // this.props.dispatch({type: 'Done'});
+        console.log('after done', this.props.loginCheck)
       })
     }
     componentDidMount(){
@@ -97,7 +99,8 @@ class player_block extends Component {
 
 function mapStateToProps(state) {
   return {
-    load: state.load
+    load: state.load,
+    loginCheck: state.loginCheck
   }
 }
 

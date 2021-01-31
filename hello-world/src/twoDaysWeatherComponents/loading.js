@@ -25,7 +25,8 @@ class loading extends Component  {
 
 function mapStateToProps(state) {
   return {
-    load: state.load
+    load: state.load,
+    loginCheck: state.loginCheck
   }
 }
 

@@ -17,6 +17,7 @@ class videoBoard extends Component {
       this.setState({currentArea: area})
   }
   render(){
+    console.log('in weather', this.props.loginCheck)
     if(this.props.loginCheck){
       return(
         <div>
