@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
+import { Tab, Tabs, Paper } from '@material-ui/core';
+import { TabPanel } from '@material-ui/lab';
 
 class Nav extends Component  {
   constructor() {
     super();
     this.state = {
-     
+      value: "",
     }
-    
+    this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount (){
     console.log('in nav js', this.props.loginCheck)
     
+  }
+
+  handleChange(e){
+    this.setState({value: e.target.value})
   }
   
   render(){
@@ -25,6 +31,19 @@ class Nav extends Component  {
                     <li><Link to="/weather">Weather</Link></li>
                 </ul>
                 <hr />
+                <Paper square>
+                  <Tabs
+                    value={value}
+                    indicatorColor="primary"
+                    textColor="primary"
+                    onChange={handleChange}
+                    aria-label="disabled tabs example"
+                  >
+                    <Tab label="Active" />
+                    <Tab label="Disabled" disabled />
+                    <Tab label="Active" />
+                  </Tabs>
+                </Paper>
             </div>
     );
   } 
