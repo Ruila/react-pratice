@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
-import { Tab, Tabs, Paper } from '@material-ui/core';
+import { AppBar, Tab, Tabs, Paper } from '@material-ui/core';
 import { TabPanel } from '@material-ui/lab';
 
 class Nav extends Component  {
   constructor() {
     super();
     this.state = {
-      value: "",
+      current: '/',
+      value: ['/', '/profile', '/weather'],
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -19,7 +20,9 @@ class Nav extends Component  {
   }
 
   handleChange(e){
-    this.setState({value: e.target.value})
+    console.log('e=1', e.target)
+    console.log('e=', e.target.text)
+    // this.setState({current: e.target.value})
   }
   
   render(){
@@ -31,19 +34,14 @@ class Nav extends Component  {
                     <li><Link to="/weather">Weather</Link></li>
                 </ul>
                 <hr />
-                <Paper square>
-                  <Tabs
-                    value={value}
-                    indicatorColor="primary"
-                    textColor="primary"
-                    onChange={handleChange}
-                    aria-label="disabled tabs example"
-                  >
-                    <Tab label="Active" />
-                    <Tab label="Disabled" disabled />
-                    <Tab label="Active" />
+                <AppBar position="static">
+                  <Tabs value={this.state.current} onChange={this.handleChange} aria-label="simple tabs example">
+                    <Tab label="Home" value={this.state.value[0]} component={Link} to={this.state.value[0]}/>
+                    <Tab label="Profile" value="/profile" component={Link} to={this.state.value[1]} />
+                    <Tab label="Weather" value="/weather" component={Link} to={this.state.value[2]} />
                   </Tabs>
-                </Paper>
+                </AppBar>
+               
             </div>
     );
   } 
