@@ -20,9 +20,22 @@ class Nav extends Component  {
   }
 
   handleChange(e){
+    switch(e.target.innerText){
+      case 'HOME':
+        this.setState({current: '/'})
+        return;
+      case 'PROFILE':
+        this.setState({current: '/profile'})
+        return;
+      case 'WEATHER':
+        this.setState({current: '/weather'})
+        return;
+      default:
+        this.setState({current: '/'})
+        return;
+    }
     console.log('e=1', e.target)
-    console.log('e=', e.target.text)
-    // this.setState({current: e.target.value})
+    console.log('e=', e.target.innerText)
   }
   
   render(){
