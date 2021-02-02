@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { AppBar, Tab, Tabs, Paper } from '@material-ui/core';
 import { TabPanel } from '@material-ui/lab';
+import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 
 class Nav extends Component  {
   constructor() {
@@ -52,9 +53,9 @@ class Nav extends Component  {
                     <Tab label="Home" value={this.state.value[0]} component={Link} to={this.state.value[0]}/>
                     <Tab label="Profile" value="/profile" component={Link} to={this.state.value[1]} />
                     <Tab label="Weather" value="/weather" component={Link} to={this.state.value[2]} />
+                    {/* <Tab label="" icon={ <AccountCircleOutlinedIcon />} /> */}
                   </Tabs>
                 </AppBar>
-               
             </div>
     );
   } 
