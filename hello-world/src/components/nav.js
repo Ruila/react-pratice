@@ -48,7 +48,7 @@ class Nav extends Component  {
                 </ul>
                 <hr /> */}
                 <AppBar position="static">
-                  <Tabs value={this.state.current} onChange={this.handleChange} aria-label="simple tabs example">
+                  <Tabs value={this.state.current} onChange={this.handleChange} aria-label="simple tabs example" indicatorColor="primary">
                     <Tab label="Home" value={this.state.value[0]} component={Link} to={this.state.value[0]}/>
                     <Tab label="Profile" value="/profile" component={Link} to={this.state.value[1]} />
                     <Tab label="Weather" value="/weather" component={Link} to={this.state.value[2]} />
