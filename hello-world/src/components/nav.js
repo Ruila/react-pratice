@@ -41,12 +41,12 @@ class Nav extends Component  {
   render(){
     return (
             <div className="m-nav">
-                <ul>
+                {/* <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/weather">Weather</Link></li>
                 </ul>
-                <hr />
+                <hr /> */}
                 <AppBar position="static">
                   <Tabs value={this.state.current} onChange={this.handleChange} aria-label="simple tabs example">
                     <Tab label="Home" value={this.state.value[0]} component={Link} to={this.state.value[0]}/>
