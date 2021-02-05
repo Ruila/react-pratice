@@ -4,6 +4,7 @@ import Login from './components/Login/login.js';
 import Home from './components/Home/home.js';
 import Weather from './twoDaysWeatherComponents/videoBoard.js';
 import Profile from './components/Profile/profile.js';
+import SignUp from './components/SingUp/signup.js';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { HashRouter, Route, Link } from "react-router-dom";
@@ -31,6 +32,7 @@ class App extends Component  {
         <Route exact path="/profile" component={Profile} />
         <Route path="/weather" component={Weather} />
         <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
       </HashRouter>
     );
   } 
