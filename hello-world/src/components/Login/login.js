@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../css/login.css';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
+import axios from 'axios';
 
 class Login extends Component  {
   constructor() {
@@ -30,12 +31,27 @@ class Login extends Component  {
 
 
   checkLogin(){
-      if (this.state.account === "a" && this.state.password === 'b') {
+    const obj = {
+      "email": "abc@gmail.com",
+      "password": this.state.password,
+      "userid": this.state.account,
+    }
+    console.log('check', obj);
+    axios.post('http://localhost:8000/api/user/logincheck', obj)
+    .then(v=>{
+      console.log('logindd',v);
+      if(v.data === 'succeed'){
         this.props.dispatch({type: 'Login'});
-        console.log('go', this.props.loginCheck);
-       
+      } else {
+        
       }
-      console.log(this.state.account)
+    });
+    // if (this.state.account === "a" && this.state.password === 'b') {
+    //     this.props.dispatch({type: 'Login'});
+    //     console.log('go', this.props.loginCheck);
+       
+    //   }
+    //   console.log(this.state.account)
   }
   
   render(){
