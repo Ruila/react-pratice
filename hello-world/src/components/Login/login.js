@@ -32,9 +32,8 @@ class Login extends Component  {
 
   checkLogin(){
     const obj = {
-      "email": "abc@gmail.com",
+      "email": this.state.account,
       "password": this.state.password,
-      "userid": this.state.account,
     }
     console.log('check', obj);
     axios.post('http://localhost:8000/api/user/logincheck', obj)

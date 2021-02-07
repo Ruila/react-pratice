@@ -27,6 +27,7 @@
     border-radius: 7px;
     color: #ffffff;
     background-color: #bf5a1b;
+    cursor: pointer;
 }
 #signup .signup-block .input-block input {
     flex: 1;
