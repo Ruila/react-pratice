@@ -1,0 +1,107 @@
+.input-layout {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.input-layout input {
+    padding: 6px 12px;
+    width: 300px;
+    background-color: #edf0f4;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: none;
+}
+
+.input-layout button {
+    height: 40px;
+    cursor: pointer;
+}
+
+.block-layout {
+    padding: 50px 0;
+}
+
+.content-layout {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
+}
+
+.shop-layout {
+    display: flex;
+    border: 1px solid #000000;
+    min-width: 300px;
+    margin: 10px 0;
+}
+
+.shop-layout .img {
+    width: 250px;
+}
+.shop-layout .img img{
+    width: 100%;
+}
+.shop-layout .text {
+    width: 250px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shop-layout .text span{
+}
+.dropdown-block {
+    background-color: #ffffff;
+    border: 1px solid #e4e4e4;
+    width: 324px;
+    height: 150px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    overflow: auto;
+}
+
+.input-component {
+    width: 370px;
+    display: flex;
+    position: relative;
+}
+
+.drowpUnit-layout h5 {
+    margin: 0;
+}
+
+.drowpUnit-layout {
+    padding: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.drowpUnit-layout:hover {
+    background-color: aquamarine;
+}
+
+.hide {
+    display: none!important;
+}
+
+.clear {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #e4e4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 50px;
+    cursor: pointer;
+}
+
+.clear span{
+    color: #000000;
+    font-size: 14px;
+}
