@@ -3,6 +3,10 @@ import '../../css/login.css';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import axios from 'axios';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+
 
 class Login extends Component  {
   constructor() {
@@ -10,11 +14,16 @@ class Login extends Component  {
     this.state = {
       account: "",
       password: "",
+      modal: false,
+      message: "",
+      emailAlert: true,
+      passwordAlert: true,
     }
     this.checkLogin=this.checkLogin.bind(this);
     this.handleAccount=this.handleAccount.bind(this);
     this.handlePassword=this.handlePassword.bind(this);
-    
+    this.ModalOpen=this.ModalOpen.bind(this);
+    this.ModalClose=this.ModalClose.bind(this);
   }
 
   componentDidMount () {
@@ -29,28 +38,36 @@ class Login extends Component  {
     this.setState({password: event.target.value});
   }
 
+  ModalOpen () {
+    this.setState({modal: true});
+  }
+
+  ModalClose () {
+    this.setState({modal: false});
+  }
 
   checkLogin(){
     const obj = {
       "email": this.state.account,
       "password": this.state.password,
     }
-    console.log('check', obj);
-    axios.post('http://localhost:8000/api/user/logincheck', obj)
-    .then(v=>{
-      console.log('logindd',v);
-      if(v.data === 'succeed'){
-        this.props.dispatch({type: 'Login'});
-      } else {
-        
-      }
-    });
-    // if (this.state.account === "a" && this.state.password === 'b') {
-    //     this.props.dispatch({type: 'Login'});
-    //     console.log('go', this.props.loginCheck);
-       
-    //   }
-    //   console.log(this.state.account)
+    if(this.state.account === ""){
+      this.setState({emailAlert: false})
+    } else if (this.state.password === "") {
+      this.setState({passwordAlert: false});
+    } else {
+      axios.post('http://localhost:8000/api/user/logincheck', obj)
+      .then(v=>{
+        console.log('logindd',v);
+        if(v.data === 'succeed'){
+          this.props.dispatch({type: 'Login'});
+        } else {
+          this.setState({message: v.data});
+          this.setState({modal: true});
+        }
+      });
+    }
+
   }
   
   render(){
@@ -66,17 +83,42 @@ class Login extends Component  {
                 <div>
                     <h1>Sign in</h1>
                 </div>
-                 <div>
-                     <input value={this.state.account} onChange={this.handleAccount} type="text" />
+                 <div className="input-block">
+                  <span>Email:</span>
+                  <input value={this.state.account} onChange={this.handleAccount} type="text" />
                  </div>
-                 <div>
-                     <input value={this.state.password} onChange={this.handlePassword} type="text" />
+                 <div className={`input-block wrong ${this.state.emailAlert?'hide':''}`}>
+                  <span></span>
+                  <h5>***請輸入正確信箱***</h5>
+                 </div>
+                 <div className="input-block">
+                  <span>Password:</span>
+                  <input value={this.state.password} onChange={this.handlePassword} type="text" />
+                 </div>
+                 <div className={`input-block wrong ${this.state.passwordAlert?'hide':''}`}>
+                  <span></span>
+                  <h5>***請輸入正確密碼***</h5>
                  </div>
                  <div className="btn">
                      <span onClick={this.checkLogin}>login</span>
                  </div>
             </div>
-            
+            <Modal
+              id="loginModal"
+              open = {this.state.modal}
+              onClose = {this.ModalClose}
+              closeAfterTransition
+              BackdropComponent={Backdrop}
+              BackdropProps={{
+                timeout: 500,
+              }}
+              >
+                <Fade in={this.state.modal}>
+                  <div className="modal_content">
+                    <h2>{this.state.message}</h2>
+                  </div>
+                </Fade>
+            </Modal>
         </div>
      );
     }
