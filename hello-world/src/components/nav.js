@@ -10,7 +10,7 @@ class Nav extends Component  {
     super();
     this.state = {
       current: '/',
-      value: ['/', '/profile', '/weather', '/signup'],
+      value: ['/', '/profile', '/weather', '/signup', '/eCommerceInput'],
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -34,6 +34,9 @@ class Nav extends Component  {
       case 'SIGNUP':
       this.setState({current: '/signup'})
       return;
+      case 'ECOMMERCEINPUT':
+      this.setState({current: '/eCommerceInput'})
+      return;
       default:
         this.setState({current: '/'})
         return;
@@ -55,6 +58,7 @@ class Nav extends Component  {
                     <Tab label="Profile" value="/profile" component={Link} to={this.state.value[1]} />
                     <Tab label="Weather" value="/weather" component={Link} to={this.state.value[2]} />
                     <Tab label="SignUp" value="/signup" component={Link} to={this.state.value[3]} />
+                    <Tab label="eCommerceInput" value="/eCommerceInput" component={Link} to={this.state.value[4]} />
                     {/* <Tab label="" icon={ <AccountCircleOutlinedIcon />} /> */}
                   </Tabs>
                 </AppBar>

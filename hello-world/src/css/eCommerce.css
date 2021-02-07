@@ -5,8 +5,9 @@
 }
 
 .input-layout input {
-    padding: 6px 12px;
+    padding: 0px 12px;
     width: 300px;
+    height: 40px;
     background-color: #edf0f4;
     border-radius: 8px;
     border-top-right-radius: 0;

@@ -2,7 +2,7 @@ import '../../css/eCommerce.css';
 import Input from './input.js';
 import Content from './content';
 import React, { Component } from 'react';
-import Json from '../json/biggo_sitetype.json'
+import Json from './biggo_sitetype.json'
 
 class block extends Component {
   constructor(props) {
