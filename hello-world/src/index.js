@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Loading from './twoDaysWeatherComponents/loading.js';
+import Loading from './components/twoDaysWeatherComponents/loading.js';
 import App from './App.js';
 import Nav from './components/nav.js'
 import reportWebVitals from './reportWebVitals';
@@ -30,7 +30,7 @@ function reducer(state = initialState, action) {
     default:
       return{
         load: false,
-        loginCheck: false,
+        loginCheck: true,
       };
   }
 }

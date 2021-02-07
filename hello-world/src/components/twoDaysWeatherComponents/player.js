@@ -1,6 +1,6 @@
-import '../css/style.css';
-import weatherImg from '../images/cloudy.png';
-import {apikey} from "../api/apikey.js";
+import '../../css/style.css';
+import weatherImg from '../../images/cloudy.png';
+import {apikey} from "../../api/apikey.js";
 import React, {Component} from 'react';
 import axios from 'axios';
 import Unit from './unit'

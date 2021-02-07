@@ -1,4 +1,4 @@
-import '../css/style.css';
+import '../../css/style.css';
 import PlayerBlock from './player.js'
 import Btn from './button.js'
 import React, { Component } from 'react';
