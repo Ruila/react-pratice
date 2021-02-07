@@ -20,7 +20,7 @@ class videoBoard extends Component {
     console.log('in weather', this.props.loginCheck)
     if(this.props.loginCheck){
       return(
-        <div>
+        <div id="weather">
           <Btn data-testid="btn" area={this.state.currentArea} changeArea={this.changeArea}/>
           <div className="video-board">
             <PlayerBlock data-testid="data-block" area={this.state.currentArea}/>
