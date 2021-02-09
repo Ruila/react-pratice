@@ -30,7 +30,7 @@ function reducer(state = initialState, action) {
     default:
       return{
         load: false,
-        loginCheck: true,
+        loginCheck: false,
       };
   }
 }
