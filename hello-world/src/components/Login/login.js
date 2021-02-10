@@ -28,6 +28,10 @@ class Login extends Component  {
 
   componentDidMount () {
     console.log(this.state.account)
+    axios.get('http://localhost:8000/api/user/logincheck')
+    .then(v=>{
+      console.log('get exist', v)
+    })
   }
 
   handleAccount (event){
@@ -64,7 +68,7 @@ class Login extends Component  {
         if(v.data === 'succeed'){
           this.props.dispatch({type: 'Login'});
         } else {
-          this.setState({message: v.data});
+          this.setState({message: v});
           this.setState({modal: true});
         }
       });
