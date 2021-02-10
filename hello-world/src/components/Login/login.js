@@ -56,7 +56,12 @@ class Login extends Component  {
     } else if (this.state.password === "") {
       this.setState({passwordAlert: false});
     } else {
-      axios.post('http://localhost:8000/api/user/logincheck', obj)
+      axios.post('http://localhost:8000/api/user/logincheck', obj, {
+        withCredentials: true,
+        headers: {
+          Cookie: 'cookie1=1234'
+        }
+      })
       .then(v=>{
         console.log('logindd',v);
         if(v.data === 'succeed'){
