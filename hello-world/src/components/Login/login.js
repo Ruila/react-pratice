@@ -58,9 +58,6 @@ class Login extends Component  {
     } else {
       axios.post('http://localhost:8000/api/user/logincheck', obj, {
         withCredentials: true,
-        headers: {
-          Cookie: 'cookie1=1234'
-        }
       })
       .then(v=>{
         console.log('logindd',v);
