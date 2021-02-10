@@ -6,6 +6,7 @@ import axios from 'axios';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import cookie from 'js-cookie';
 
 
 class Login extends Component  {
@@ -28,10 +29,10 @@ class Login extends Component  {
 
   componentDidMount () {
     console.log(this.state.account)
-    axios.get('http://localhost:8000/api/user/logincheck')
-    .then(v=>{
-      console.log('get exist', v)
-    })
+    console.log('cookie', cookie.get('cookie1'));
+    if(cookie.get('cookie1') === 'abc1234'){
+      this.props.dispatch({type: 'Login'});
+    }
   }
 
   handleAccount (event){
