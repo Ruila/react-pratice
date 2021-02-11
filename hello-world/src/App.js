@@ -2,13 +2,13 @@ import './App.css';
 import Nav from './components/nav.js';
 import Login from './components/Login/login.js';
 import Home from './components/Home/home.js';
-import Weather from './components/twoDaysWeatherComponents/videoBoard.js';
+import Weather from './components/twoDaysWeatherComponents/weatherFrame.js';
 import Profile from './components/Profile/profile.js';
 import SignUp from './components/SingUp/signup.js';
 import eCommerceInput from './components/E-commerceInput/block.js';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter, Route, Link } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 
 class App extends Component  {
   constructor() {

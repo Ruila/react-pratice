@@ -31,6 +31,9 @@
     max-width: 33.333333%;
     position: relative;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -69,10 +72,13 @@ h1 {
     margin: 3px 0;
 }
 
-.title {
+.area-card {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px 0;
+    width: 300px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 
 .input {
@@ -82,7 +88,7 @@ h1 {
 }
 
 .hide {
-    display: none!important;
+    display: none !important;
 }
 
 .width-100 {
@@ -111,13 +117,14 @@ body {
     background-color: #48b5ff;
 }
 
-.note{
+.note {
     display: flex;
     align-items: center;
     position: absolute;
     right: 10%;
 }
-.note .sunblock{
+
+.note .sunblock {
     width: 20px;
     height: 20px;
     background-color: #f8d14c;
@@ -126,7 +133,8 @@ body {
     margin-left: 10px;
     border-radius: 3px;
 }
-.note .notsunblock{
+
+.note .notsunblock {
     width: 20px;
     height: 20px;
     background-color: #48b5ff;
@@ -136,13 +144,13 @@ body {
     border-radius: 3px;
 }
 
-input{
+input {
     height: 25px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-button{
+button {
     background-color: #5a5a5a;
     color: #ffffff;
     border: 1px solid #ffffff00;
@@ -151,7 +159,8 @@ button{
     border-bottom-right-radius: 3px;
     cursor: pointer;
 }
-.loading{
+
+.loading {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -160,6 +169,7 @@ button{
     display: flex;
     justify-content: center;
 }
+
 .overlay {
     position: absolute;
     top: 0;
@@ -169,7 +179,7 @@ button{
     opacity: .5;
 }
 
-.loading h1{
+.loading h1 {
     margin-top: 5%;
     color: #ffffff;
     z-index: 33;

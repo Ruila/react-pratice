@@ -17,7 +17,7 @@ class block extends Component {
     return(
       <div className="shop-layout">
         <div className="img">
-          <img src={this.props.imgurl} />
+          <img alt="img" src={this.props.imgurl} />
         </div>
         <div className="text">
           <span>

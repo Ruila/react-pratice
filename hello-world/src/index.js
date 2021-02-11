@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Loading from './components/twoDaysWeatherComponents/loading.js';
 import App from './App.js';
-import Nav from './components/nav.js'
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';

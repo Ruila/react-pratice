@@ -1,11 +1,11 @@
 import '../../css/style.css';
-import PlayerBlock from './player.js'
+import WeatherBlock from './weatherBlock.js'
 import Btn from './button.js'
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
 
-class videoBoard extends Component {
+class weatherFrame extends Component {
   constructor(props) {
     super(props);
     this.state={ 
@@ -23,7 +23,7 @@ class videoBoard extends Component {
         <div id="weather">
           <Btn data-testid="btn" area={this.state.currentArea} changeArea={this.changeArea}/>
           <div className="video-board">
-            <PlayerBlock data-testid="data-block" area={this.state.currentArea}/>
+            <WeatherBlock data-testid="data-block" area={this.state.currentArea}/>
           </div>
         </div>
       );
@@ -41,5 +41,5 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(videoBoard);
+export default connect(mapStateToProps)(weatherFrame);
 // export default player_block;

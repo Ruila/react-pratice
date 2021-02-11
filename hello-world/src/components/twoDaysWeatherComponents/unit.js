@@ -23,7 +23,6 @@ class unit extends Component {
   
   }
   render(){
-    const {visible} = this.state;
     const listItem = this.props.unit_info.weatherElement[2].time.map((v, idx)=>{
         const weather = this.props.unit_info.weatherElement[1].time[idx].elementValue[0].value
         return(
@@ -34,23 +33,12 @@ class unit extends Component {
             </div>
         )
     })
-  //   const wea_listItem = this.props.unit_info.weatherElement[1].time.map((v)=>{
-  //     return(
-  //         <div key={v.dataTime} className="tempblock">
-  //             <p>時間：{v.dataTime}</p>
-  //             <p>體感溫度：{v.elementValue[0].value}({v.elementValue[0].measures})</p>
-  //         </div>
-  //     )
-  // })
     return(  
             <div className="col-md-4">
-                <div className="title">
+                <div className="area-card">
                   <h3>地區：{this.props.unit_info.locationName}</h3>
                   <input type="checkbox" value={this.props.unit_info.locationName} onChange={this.checkbox}></input>
                   
-                </div>
-                <div className={`collapse ${visible?'':'hide'}`}>
-                   {listItem}
                 </div>
                 
             </div>

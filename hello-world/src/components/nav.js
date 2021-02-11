@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
-import { AppBar, Tab, Tabs, Paper } from '@material-ui/core';
-import { TabPanel } from '@material-ui/lab';
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
+import { AppBar, Tab, Tabs } from '@material-ui/core';
 
 class Nav extends Component  {
   constructor() {
