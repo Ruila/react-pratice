@@ -46,7 +46,7 @@ class input extends Component  {
     }
     this.setState({inputValue: event.target.value});
     this.updateDropdown(event.target.value);
-    console.log('check input', event.target.value)
+    // console.log('check input', event.target.value)
   }
 
   // when input is foucsed

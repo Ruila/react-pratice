@@ -22,7 +22,7 @@ class vbtn extends Component  {
   }
   search(){
     let flag = 0;
-    console.log('this.state.inputValue', this.state.inputValue)
+    // console.log('this.state.inputValue', this.state.inputValue)
     this.state.locationDict.map((v)=>{
       if(v===this.state.inputValue){
         flag = 1;
@@ -30,7 +30,7 @@ class vbtn extends Component  {
       }
       return false;
     })
-    console.log('flag', flag)
+    // console.log('flag', flag)
     if(flag){
       this.props.changeArea(this.state.inputValue)
       this.setState({aalert: false});

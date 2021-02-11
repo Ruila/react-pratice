@@ -13,7 +13,7 @@ class unit extends Component {
   }
 
   checkbox(e){
-    console.log(e.target.checked)
+    // console.log(e.target.checked)
     this.setState({ visible: e.target.checked});
   }
   componentDidMount(){

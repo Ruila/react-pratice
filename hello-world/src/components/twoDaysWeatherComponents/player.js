@@ -45,21 +45,21 @@ class player_block extends Component {
     }
     check(){
       this.setState({area: this.props.area})
-      console.log("check props", this.state.area, this.props.area)
+      // console.log("check props", this.state.area, this.props.area)
       this.getData();
     }
     getData(){
       // this.props.dispatch({type: 'Loading'});
-      console.log('after loading', this.props.loginCheck)
+      // console.log('after loading', this.props.loginCheck)
       axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.locationDict[this.props.area]}?Authorization=${apikey}`)
       .then((v)=>{
-        console.log('qq', v);
+        // console.log('qq', v);
         this.setState({info: v.data.records.locations[0]})
         // console.log(this.state.info)
        
       }).then(()=>{
         // this.props.dispatch({type: 'Done'});
-        console.log('after done', this.props.loginCheck)
+        // console.log('after done', this.props.loginCheck)
       })
     }
     componentDidMount(){
@@ -67,10 +67,10 @@ class player_block extends Component {
 
     }
     componentDidUpdate(prevProps, prevState, snapshot){
-      console.log("componentDidUpdate", prevProps.area, this.props.area)
+      // console.log("componentDidUpdate", prevProps.area, this.props.area)
       if(prevProps.area!==this.props.area){
         this.check();
-        console.log("inside componentDidUpdate", prevProps.area, this.props.area)
+        // console.log("inside componentDidUpdate", prevProps.area, this.props.area)
         }
     }
     render(){

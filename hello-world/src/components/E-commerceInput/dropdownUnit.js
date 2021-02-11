@@ -14,7 +14,7 @@ class dropdownUnit extends Component {
   }
   fastSearch(){
     this.props.fastSearch(this.props.text)
-    console.log('this.pros', this.props.text)
+    // console.log('this.pros', this.props.text)
   }
   render(){
     return(

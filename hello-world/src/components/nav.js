@@ -16,7 +16,7 @@ class Nav extends Component  {
   }
 
   componentDidMount (){
-    console.log('in nav js', this.props.loginCheck)
+    // console.log('in nav js', this.props.loginCheck)
     
   }
 
