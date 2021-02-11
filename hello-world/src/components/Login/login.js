@@ -69,8 +69,10 @@ class Login extends Component  {
         if(v.data === 'succeed'){
           this.props.dispatch({type: 'Login'});
         } else {
-          this.setState({message: v});
+          this.setState({message: v.data || 'nothing'});
           this.setState({modal: true});
+          this.setState({account: ""});
+          this.setState({password: ""});
         }
       });
     }

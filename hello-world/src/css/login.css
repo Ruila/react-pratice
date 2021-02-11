@@ -70,6 +70,10 @@
     background-color: #ffffff;
 }
 
+#loginModal .modal_content:focus {
+    outline: none;
+}
+
 .hide {
     display: none!important;
 }
