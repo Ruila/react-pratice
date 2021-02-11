@@ -45,7 +45,7 @@ class Nav extends Component  {
   
   render(){
     return (
-            <div className="m-nav">
+            <div className={`m-nav ${this.props.loginCheck?'':'hide'}`} >
                 {/* <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
