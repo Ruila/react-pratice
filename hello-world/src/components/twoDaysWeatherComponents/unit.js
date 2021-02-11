@@ -6,7 +6,6 @@ class unit extends Component {
     super(props);
     this.state={ 
         unit_info:{},
-        visible: false
     }
 
     this.checkbox=this.checkbox.bind(this);
@@ -37,9 +36,9 @@ class unit extends Component {
             <div className="col-md-4">
                 <div className="area-card">
                   <h3>地區：{this.props.unit_info.locationName}</h3>
-                  <input type="checkbox" value={this.props.unit_info.locationName} onChange={this.checkbox}></input>
-                  
+                  <h5>Click to read more</h5>
                 </div>
+               
                 
             </div>
         );
