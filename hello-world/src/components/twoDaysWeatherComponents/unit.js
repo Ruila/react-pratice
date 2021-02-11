@@ -1,5 +1,6 @@
 import '../../css/style.css';
 import React, { Component } from 'react';
+import { Route, Link } from "react-router-dom";
 
 class unit extends Component {
   constructor(props) {
@@ -36,10 +37,10 @@ class unit extends Component {
             <div className="col-md-4">
                 <div className="area-card">
                   <h3>地區：{this.props.unit_info.locationName}</h3>
-                  <h5>Click to read more</h5>
+                  <Link to={'/weather/' + this.props.unit_info.locationName}>
+                    <h5>Click to read more</h5>
+                  </Link>
                 </div>
-               
-                
             </div>
         );
   }

@@ -76,26 +76,31 @@ h1 {
     cursor: pointer;
     padding: 15px 0;
     width: 300px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .area-card:hover {
     background-color: #5a5a5a;
     animation-name: animation;
-    animation-duration: .2s;
-    animation-fill-mode:forwards;
+    animation-duration: .1s;
+    animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
 
-@keyframes animation{
-    from{
+@keyframes animation {
+    from {
         top: 0px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     }
-    to{
+
+    to {
         top: -3px;
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
+}
+
+.area-card a {
+    text-decoration: none;
 }
 
 .area-card h3 {
@@ -104,7 +109,7 @@ h1 {
     margin: 5px 0;
 }
 
-.area-card:hover h3{
+.area-card:hover h3 {
     color: #ffffff;
 }
 

@@ -6,9 +6,10 @@ import Weather from './components/twoDaysWeatherComponents/weatherFrame.js';
 import Profile from './components/Profile/profile.js';
 import SignUp from './components/SingUp/signup.js';
 import eCommerceInput from './components/E-commerceInput/block.js';
+import Information from "./components/twoDaysWeatherComponents/information.js";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 class App extends Component  {
   constructor() {
@@ -27,15 +28,16 @@ class App extends Component  {
   
   render(){
     return (
-      <HashRouter>
+      <div>
         <Nav />
         <Route exact path="/" component={Home} />
         <Route exact path="/profile" component={Profile} />
-        <Route path="/weather" component={Weather} />
+        <Route exact path="/weather" component={Weather} />
         <Route path="/eCommerceInput" component={eCommerceInput} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
-      </HashRouter>
+        <Route path="/weather/:id" component={Information} />
+      </div>
     );
   } 
 }
