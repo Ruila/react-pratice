@@ -23,7 +23,7 @@ class information extends Component  {
           <div className="title">
             <h5>{props.locationName}</h5>
           </div>
-          <Chart />
+          <Chart props={props} />
         </div>
       );
     } else {

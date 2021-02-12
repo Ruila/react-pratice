@@ -12,8 +12,10 @@ class Chart extends Component  {
     
   }
   componentDidMount () {
+      console.log('in chart', this.props.props)
   }
   render(){
+    let inputData = [];
     const data = [
       {
         name: 'Page A',
@@ -57,15 +59,50 @@ class Chart extends Component  {
         '體感溫度': 4300,
         amt: 2100,
       },
+      {
+        name: 'Page H',
+        '溫度': 2390,
+        '體感溫度': 3800,
+        amt: 2500,
+      },
+      {
+        name: 'Page I',
+        '溫度': 3490,
+        '體感溫度': 4300,
+        amt: 2100,
+      },
+      {
+        name: 'Page K',
+        '溫度': 2390,
+        '體感溫度': 3800,
+        amt: 2500,
+      },
+      {
+        name: 'Page L',
+        '溫度': 3490,
+        '體感溫度': 4300,
+        amt: 2100,
+      },
     ];
+
+    this.props.props.weatherElement[2].time.forEach((v, idx)=>{
+        let obj = {
+            name: v.dataTime,
+            '體感溫度': v.elementValue[0].value,
+            '溫度': this.props.props.weatherElement[3].time[idx].elementValue[0].value
+        }
+        inputData.push(obj)
+    })
+
+    // console.log('check oooobj', inputData)
     
     if(this.props.loginCheck){
       return (
           <div className="">
             <LineChart
-            width={500}
+            width={900}
             height={300}
-            data={data}
+            data={inputData}
             margin={{
               top: 5,
               right: 30,
@@ -78,7 +115,7 @@ class Chart extends Component  {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="體感溫度" stroke="#8884d8" activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="體感溫度" stroke="#8884d8" activeDot={{ r: 10 }} />
             <Line type="monotone" dataKey="溫度" stroke="#82ca9d" />
           </LineChart>
          </div>

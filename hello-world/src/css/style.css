@@ -244,8 +244,8 @@ button {
 }
 
 #information .title h5 {
-    font-size: 48px;
-    margin: 15px;
+    font-size: 36px;
+    margin: 25px 0 45px 0;
     color: #3e4245;
     border-bottom: 10px solid #368ed7;
 }
