@@ -1,6 +1,10 @@
 import '../../css/style.css';
 import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
+import clouds from '../../images/clouds.png';
+import sun from '../../images/sun.png';
+import overcast from '../../images/overcast.png';
+import rain from '../../images/raining.png';
 
 class unit extends Component {
   constructor(props) {
@@ -17,30 +21,40 @@ class unit extends Component {
     this.setState({ visible: e.target.checked});
   }
   componentDidMount(){
-    this.setState({unit_info: this.props.unit_info})
+    console.log('unit info ', this.props.unit_info)
+    // this.setState({unit_info: this.props.unit_info})
   }
   componentDidUpdate(prevProps, prevState, snapshot){
   
   }
   render(){
-    const listItem = this.props.unit_info.weatherElement[2].time.map((v, idx)=>{
-        const weather = this.props.unit_info.weatherElement[1].time[idx].elementValue[0].value
-        return(
-            <div key={v.dataTime} className={`tempblock ${weather==='晴'?'sun-color':'not-sun-color'}`}>
-                <p>時間：{v.dataTime}</p>
-                <p>天氣：{weather}</p>
-                <p>體感溫度：{v.elementValue[0].value}({v.elementValue[0].measures})</p>
-            </div>
-        )
-    })
+    const weatherProps = this.props.unit_info.weatherElement[1].time[0].elementValue[0].value;
+    let weatherSituation = "";
+    let weatherImg;
+    let current_weather = ""
+
+    if(weatherProps === "晴") {
+      weatherSituation ='sun-color';
+      weatherImg = sun;
+    } else if (weatherProps === "多雲") {
+      // weatherSituation = 'not-sun-color';
+      // current_weather = "目前氣象：多雲"
+      weatherImg = clouds;
+    } else if (weatherProps === "陰") {
+      weatherImg = overcast;
+    } else if (weatherProps === "短暫雨") {
+      weatherImg = rain;
+    }
+      
     return(  
             <div className="col-md-4">
-                <div className="area-card">
+              <Link to={'/weather/' + this.props.unit_info.locationName}>
+                <div className={`area-card ${weatherSituation}`} style={{ backgroundImage: `url(${weatherImg})`}}>
+                  {/* <h3>{current_weather}</h3> */}
                   <h3>地區：{this.props.unit_info.locationName}</h3>
-                  <Link to={'/weather/' + this.props.unit_info.locationName}>
-                    <h5>Click to read more</h5>
-                  </Link>
                 </div>
+              </Link>
+               
             </div>
         );
   }
