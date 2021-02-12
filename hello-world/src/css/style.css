@@ -166,32 +166,6 @@ body {
     background-color: #48b5ff;
 }
 
-.note {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 10%;
-}
-
-.note .sunblock {
-    width: 20px;
-    height: 20px;
-    background-color: #f8d14c;
-    border: 1px solid #565656;
-    margin-right: 10px;
-    margin-left: 10px;
-    border-radius: 3px;
-}
-
-.note .notsunblock {
-    width: 20px;
-    height: 20px;
-    background-color: #48b5ff;
-    border: 1px solid #565656;
-    margin-right: 10px;
-    margin-left: 10px;
-    border-radius: 3px;
-}
 
 input {
     height: 25px;

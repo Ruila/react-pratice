@@ -76,12 +76,6 @@ class weatherBlock extends Component {
                 <div className="top">
                   <img className="weatherImg" src={weatherImg} alt="weather"/>
                   <h1>{this.state.area}未來兩天天氣預報</h1>
-                  <div className="note">
-                      <div className="sunblock"></div>
-                      <span>出太陽好天氣</span>
-                      <div className="notsunblock"></div>
-                      <span>沒出太陽壞天氣</span>
-                  </div>
                 </div>
                 <div className="container">
                   {listItem}
