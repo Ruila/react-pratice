@@ -3,15 +3,15 @@ import weatherImg from '../../images/cloudy.png';
 import {apikey} from "../../api/apikey.js";
 import React, {Component} from 'react';
 import axios from 'axios';
-import Unit from './unit'
-import { connect } from 'react-redux'
+import Unit from './unit';
+import { connect } from 'react-redux';
 
 class weatherBlock extends Component {
     constructor() {
       super();
       this.state = {
         area: "臺南市",
-        locationDict: {
+        areaDict: {
           "宜蘭縣": "F-D0047-001",
           "桃園市": "F-D0047-005",
           "新竹縣": "F-D0047-009",
@@ -49,9 +49,8 @@ class weatherBlock extends Component {
     }
     getData(){
       // this.props.dispatch({type: 'Loading'});
-      axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.locationDict[this.props.area]}?Authorization=${apikey}`)
+      axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.areaDict[this.props.area]}?Authorization=${apikey}`)
       .then((v)=>{
-        console.log('qq', v);
         this.setState({info: v.data.records.locations[0]})
        
       }).then(()=>{
@@ -70,7 +69,7 @@ class weatherBlock extends Component {
     render(){
       const listItem = this.state.info.location.map((v)=>{
         
-        return <Unit key={v.locationName} unit_info={v}/>
+        return <Unit key={v.locationName} unit_info={v}  area={this.state.area}/>
       })
       return <div className="width-100">
                 <div className="top">

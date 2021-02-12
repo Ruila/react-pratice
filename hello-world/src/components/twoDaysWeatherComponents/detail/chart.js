@@ -14,6 +14,11 @@ class Chart extends Component  {
   componentDidMount () {
       console.log('in chart', this.props.props)
   }
+  componentDidUpdate(prevProps, prevState, snapshot){
+    if(prevProps.props!==this.props.props){
+      console.log('check props', this.props.props)
+      }
+  }
   render(){
     let inputData = [];
     const data = [

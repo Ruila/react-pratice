@@ -17,11 +17,9 @@ class unit extends Component {
   }
 
   checkbox(e){
-    // console.log(e.target.checked)
     this.setState({ visible: e.target.checked});
   }
   componentDidMount(){
-    // this.setState({unit_info: this.props.unit_info})
   }
   componentDidUpdate(prevProps, prevState, snapshot){
   
@@ -50,7 +48,9 @@ class unit extends Component {
               <Link to={{
                 pathname: '/weather/' + this.props.unit_info.locationName,
                 state: {
-                  detail_info: this.props.unit_info
+                  detail_info: this.props.unit_info,
+                  area: this.props.area,
+                  location: this.props.unit_info.locationName,
                 }
               }}>
                 <div className={`area-card ${weatherSituation}`} style={{ backgroundImage: `url(${weatherImg})`}}>
