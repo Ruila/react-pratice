@@ -6,7 +6,7 @@ import Weather from './components/twoDaysWeatherComponents/weatherFrame.js';
 import Profile from './components/Profile/profile.js';
 import SignUp from './components/SingUp/signup.js';
 import eCommerceInput from './components/E-commerceInput/block.js';
-import Information from "./components/twoDaysWeatherComponents/information.js";
+import Information from "./components/twoDaysWeatherComponents/detail/information.js";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from "react-router-dom";

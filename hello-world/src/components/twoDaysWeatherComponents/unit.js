@@ -5,7 +5,6 @@ import clouds from '../../images/clouds.png';
 import sun from '../../images/sun.png';
 import overcast from '../../images/overcast.png';
 import rain from '../../images/raining.png';
-import Information from "./information.js";
 
 class unit extends Component {
   constructor(props) {

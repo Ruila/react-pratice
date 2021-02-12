@@ -40,7 +40,7 @@ class input extends Component  {
   handleChange(event){
     if(event.target.value.length>0){
       this.setState({clearHide: false})
-    } else if (event.target.value.length == 0){
+    } else if (event.target.value.length === 0){
       this.setState({clearHide: true})
       this.setState({dropdownHide: true})
     }
@@ -75,9 +75,10 @@ class input extends Component  {
       if (v.name.indexOf(input)>=0){
         return v
       }
+      return 0
     })
     // console.log('current filter', this.state.inputValue, filter)
-    if(filter.length == this.state.arrayType.length){
+    if(filter.length === this.state.arrayType.length){
       this.setState({dropdownHide: true})
     } else if (filter.length >0){
       this.setState({dropdownHide: false})
@@ -92,6 +93,7 @@ class input extends Component  {
     if (v.name.indexOf(this.state.inputValue)>=0){
       return v
     }
+    return 0
   })
  
   this.props.updateCurrentList(filter)
@@ -101,6 +103,7 @@ class input extends Component  {
       if (v.name.indexOf(input)>=0){
         return v
       }
+      return 0
     })
    
     this.props.updateCurrentList(filter)
