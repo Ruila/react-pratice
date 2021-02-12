@@ -5,6 +5,7 @@ import clouds from '../../images/clouds.png';
 import sun from '../../images/sun.png';
 import overcast from '../../images/overcast.png';
 import rain from '../../images/raining.png';
+import Information from "./information.js";
 
 class unit extends Component {
   constructor(props) {
@@ -21,7 +22,6 @@ class unit extends Component {
     this.setState({ visible: e.target.checked});
   }
   componentDidMount(){
-    console.log('unit info ', this.props.unit_info)
     // this.setState({unit_info: this.props.unit_info})
   }
   componentDidUpdate(prevProps, prevState, snapshot){
@@ -48,13 +48,18 @@ class unit extends Component {
       
     return(  
             <div className="col-md-4">
-              <Link to={'/weather/' + this.props.unit_info.locationName}>
+              <Link to={{
+                pathname: '/weather/' + this.props.unit_info.locationName,
+                state: {
+                  detail_info: this.props.unit_info
+                }
+              }}>
                 <div className={`area-card ${weatherSituation}`} style={{ backgroundImage: `url(${weatherImg})`}}>
                   {/* <h3>{current_weather}</h3> */}
                   <h3>地區：{this.props.unit_info.locationName}</h3>
                 </div>
               </Link>
-               
+              
             </div>
         );
   }

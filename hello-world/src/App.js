@@ -36,7 +36,9 @@ class App extends Component  {
         <Route path="/eCommerceInput" component={eCommerceInput} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
-        <Route path="/weather/:id" component={Information} />
+        <Route path="/weather/:id" render={(props)=>{
+          return ( <Information {...props} />)
+        }} />
       </div>
     );
   } 

@@ -6,7 +6,7 @@ import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 const initialState = {
   load: false,
@@ -42,12 +42,12 @@ ReactDOM.render(
   //   <App />
 
   // </React.StrictMode>,
-  <HashRouter>
+  <BrowserRouter>
     <Provider store={store}>
       <App />
       <Loading />
    </Provider>
-  </HashRouter>
+  </BrowserRouter>
   ,
   document.getElementById('root')|| document.createElement('div')
 );

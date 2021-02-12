@@ -9,7 +9,9 @@ class information extends Component  {
     }
     
   }
-  
+  componentDidMount () {
+    console.log('unit info in information', this.props.location.state)
+  }
   render(){
     return (
       <div className="">
