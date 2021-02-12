@@ -166,6 +166,10 @@ body {
     background-color: #48b5ff;
 }
 
+#input-area {
+    display: flex;
+    justify-content: center;
+}
 
 input {
     height: 25px;
@@ -227,4 +231,5 @@ button {
 
 #weather {
     padding: 100px 15px;
+    background-color: #368ed7;
 }

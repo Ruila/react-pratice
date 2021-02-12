@@ -9,7 +9,7 @@ import eCommerceInput from './components/E-commerceInput/block.js';
 import Information from "./components/twoDaysWeatherComponents/information.js";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 class App extends Component  {
   constructor() {
@@ -30,15 +30,18 @@ class App extends Component  {
     return (
       <div>
         <Nav />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/weather" component={Weather} />
-        <Route path="/eCommerceInput" component={eCommerceInput} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/weather/:id" render={(props)=>{
-          return ( <Information {...props} />)
-        }} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/weather" component={Weather} />
+          <Route path="/eCommerceInput" component={eCommerceInput} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/weather/:id" render={(props)=>{
+            return ( <Information {...props} />)
+          }} />
+        </Switch>
+        
       </div>
     );
   } 

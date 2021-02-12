@@ -41,12 +41,14 @@ class vbtn extends Component  {
   }
   render(){
     return (
-      <div>
-        <input type="text" value={this.state.inputValue} onChange={this.handleChange}></input>
-        <button onClick={this.search}>
-          查詢
-        </button>
-        <span className={`alert ${this.state.aalert?'':'hide'}`}>請輸入正確地名！</span>
+      <div id="input-area">
+        <div>
+          <input type="text" value={this.state.inputValue} onChange={this.handleChange}></input>
+          <button onClick={this.search}>
+            查詢
+          </button>
+          <span className={`alert ${this.state.aalert?'':'hide'}`}>請輸入正確地名！</span>
+        </div>
       </div>
      
     );

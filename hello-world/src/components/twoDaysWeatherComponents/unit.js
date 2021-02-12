@@ -34,7 +34,7 @@ class unit extends Component {
     let current_weather = ""
 
     if(weatherProps === "晴") {
-      weatherSituation ='sun-color';
+      // weatherSituation ='sun-color';
       weatherImg = sun;
     } else if (weatherProps === "多雲") {
       // weatherSituation = 'not-sun-color';
