@@ -5,7 +5,8 @@ import { Redirect } from "react-router-dom";
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
-
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
 class Profile extends Component  {
   constructor() {
     super();
@@ -32,17 +33,6 @@ class Profile extends Component  {
                   <div className="description">
                     <h5 className="name">William Lin</h5>
                     <h5>Software Engineer | Frontend Engineer | Photographer</h5>
-                    <div className="socialMedia">
-                      <div class="unit">
-                        <FacebookIcon />
-                      </div>
-                      <div class="unit">
-                        <InstagramIcon />
-                      </div>
-                      <div class="unit">
-                        <TwitterIcon />
-                      </div>
-                    </div>
                   </div>
                 </div>
                 <div className="socialMedia">
@@ -51,6 +41,25 @@ class Profile extends Component  {
                 </div>
               </div>
             
+            </div>
+            <div className="socialMediaBlock">
+              <div className="socialMedia">
+                <div class="unit">
+                  <FacebookIcon />
+                </div>
+                <div class="unit">
+                  <InstagramIcon />
+                </div>
+                <div class="unit">
+                  <TwitterIcon />
+                </div>
+                <div class="unit">
+                  <LinkedInIcon />
+                </div>
+                <div class="unit">
+                  <GitHubIcon />
+                </div>
+              </div> 
             </div>
           </div>
        );

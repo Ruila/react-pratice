@@ -1,4 +1,5 @@
 #profile {
+    position: relative;
     padding: 50px 0;
 }
 #profile .img-description{
@@ -32,11 +33,14 @@
 #profile .img-description .description .name {
     font-size: 24px;
 }
-
+#profile .socialMediaBlock {
+    width: 100%;
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
 #profile .socialMedia{
-    position: absolute;
-    bottom: 0;
-    left: 30px;
     display: flex;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -47,11 +51,23 @@
 }
 #profile .socialMedia .unit:hover {
     /* background-color: #5a5a5a; */
-    animation-name: animation;
+    animation-name: socialMedia-animation;
     animation-duration: .1s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
+@keyframes socialMedia-animation {
+    from {
+        top: 0px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    to {
+        top: -1px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+}
+
 #profile .p-container{
     width: 100%;
     margin: auto;
