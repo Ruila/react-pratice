@@ -6,11 +6,11 @@ import axios from 'axios';
 import Unit from './unit';
 import { connect } from 'react-redux';
 
+
 class weatherBlock extends Component {
     constructor() {
       super();
       this.state = {
-        area: "臺南市",
         areaDict: {
           "宜蘭縣": "F-D0047-001",
           "桃園市": "F-D0047-005",
@@ -44,12 +44,11 @@ class weatherBlock extends Component {
       this.check=this.check.bind(this);
     }
     check(){
-      this.setState({area: this.props.area})
-      this.getData();
+      this.getData(this.props.area);
     }
-    getData(){
+    getData(area){
       // this.props.dispatch({type: 'Loading'});
-      axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.areaDict[this.props.area]}?Authorization=${apikey}`)
+      axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.areaDict[area]}?Authorization=${apikey}`)
       .then((v)=>{
         this.setState({info: v.data.records.locations[0]})
        
@@ -58,7 +57,7 @@ class weatherBlock extends Component {
       })
     }
     componentDidMount(){
-      this.getData();
+      this.getData(this.props.area);
 
     }
     componentDidUpdate(prevProps, prevState, snapshot){
@@ -69,12 +68,12 @@ class weatherBlock extends Component {
     render(){
       const listItem = this.state.info.location.map((v)=>{
         
-        return <Unit key={v.locationName} unit_info={v}  area={this.state.area}/>
+        return <Unit key={v.locationName} unit_info={v}  area={this.props.area}/>
       })
       return <div className="width-100">
                 <div className="top">
                   <img className="weatherImg" src={weatherImg} alt="weather"/>
-                  <h1>{this.state.area}未來兩天天氣預報</h1>
+                  <h1>{this.props.area}未來兩天天氣預報</h1>
                 </div>
                 <div className="container">
                   {listItem}

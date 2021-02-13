@@ -1,12 +1,13 @@
 import '../../css/style.css';
 import React, { Component } from 'react';
+import cookie from 'js-cookie';
 
 class vbtn extends Component  {
   constructor() {
     super();
     this.state = {
       aalert: false,
-      inputValue: "臺南市",
+      inputValue: "",
       locationDict: [
         "宜蘭縣","桃園市","新竹縣","苗栗縣","彰化縣","南投縣","雲林縣","嘉義縣",
         "屏東縣","臺東縣","花蓮縣","澎湖縣","基隆縣","新竹市","嘉義市","臺北市",
@@ -30,13 +31,21 @@ class vbtn extends Component  {
       }
       return false;
     })
-    // console.log('flag', flag)
+
+    //check the input is correct
     if(flag){
       this.props.changeArea(this.state.inputValue)
       this.setState({aalert: false});
     } else {
       this.setState({aalert: true});
     }
+
+    //clear state
+    this.setState({inputValue: ""});
+
+    //set cookie
+    cookie.set('area', this.state.inputValue)
+    console.log('cookie', cookie.get('area'));
     
   }
   render(){

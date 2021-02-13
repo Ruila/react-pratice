@@ -4,6 +4,8 @@ import Btn from './button.js'
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
+import cookie from 'js-cookie';
+
 
 class weatherFrame extends Component {
   constructor(props) {
@@ -13,7 +15,12 @@ class weatherFrame extends Component {
     }
     this.changeArea=this.changeArea.bind(this);
   } 
-    changeArea(area){
+  componentDidMount() {
+    if(cookie.get('area')) {
+      this.setState({currentArea: cookie.get('area')})
+    }
+  }
+  changeArea(area){
       this.setState({currentArea: area})
   }
   render(){
