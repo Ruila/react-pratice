@@ -245,12 +245,12 @@ button {
 }
 
 .m-nav .MuiAppBar-colorPrimary {
-    background-color: #2f9cf5;
+    background-color: #151518;
 }
 
 #weather {
     padding: 100px 15px;
-    background-color: #368ed7;
+    /* background-color: #368ed7; */
     min-height: 600px;
 }
 
