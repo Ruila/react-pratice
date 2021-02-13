@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import Chart from './chart.js';
-import axios from 'axios';
-import {apikey} from "../../../api/apikey.js";
 class information extends Component  {
   constructor() {
     super();
@@ -36,26 +34,12 @@ class information extends Component  {
       },
       data: {}
     }
-    this.getData = this.getData.bind(this);
   }
   componentDidMount () {
-    this.getData();
-  }
-  getData(){
-    axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.areaDict[this.props.location.state.area]}?Authorization=${apikey}`)
-    .then((v)=>{
-      v.data.records.locations[0].location.map(v=>{
-        if(v.locationName === this.props.location.state.location){
-          console.log('wtf', v)
-          this.setState({data: v})
-        }
-      })
-    }).then(()=>{
-    })
   }
   render(){
     const props = this.props.location.state.detail_info;
-    console.log('wtfff', this.state.data)
+
     if(this.props.loginCheck){
       return (
         <div id="information">
