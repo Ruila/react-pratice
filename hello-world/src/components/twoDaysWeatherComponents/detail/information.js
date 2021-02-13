@@ -55,14 +55,33 @@ class information extends Component  {
   }
   render(){
     const props = this.props.location.state.detail_info;
-    console.log('wtfff', this.state.data)
+    console.log('wtfff', this.props.location.state.detail_info)
     if(this.props.loginCheck){
       return (
         <div id="information">
-          <div className="title">
-            <h5>{props.locationName}</h5>
+          <div className="container">
+            <div className="col-md-12">
+              <div className="title">
+                <h5>{props.locationName}</h5>
+              </div>
+            </div>
+            
+            <div className="container">
+              <div className="col-md-6">
+                <h5>Sun</h5>
+              </div>
+              <div className="col-md-6">
+                <h5>Sun</h5>
+              </div>
+            </div>
+            <div className="col-md-12">
+              <div className="temperature">
+                <h5>Temperature</h5>
+                <Chart props={props} />
+              </div>
+            </div>
           </div>
-          <Chart props={props} />
+          
         </div>
       );
     } else {

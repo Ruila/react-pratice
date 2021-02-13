@@ -2,7 +2,7 @@ import '../../../css/style.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 class Chart extends Component  {
   constructor() {
     super();
@@ -101,26 +101,26 @@ class Chart extends Component  {
     
     if(this.props.loginCheck){
       return (
-          <div className="">
-            <LineChart
-            width={900}
-            height={300}
-            data={inputData}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="體感溫度" stroke="#8884d8" activeDot={{ r: 10 }} />
-            <Line type="monotone" dataKey="溫度" stroke="#82ca9d" />
-          </LineChart>
+          <div id="lineChart">
+            <ResponsiveContainer  width="100%" height={300}>
+              <LineChart
+              data={inputData}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="體感溫度" stroke="#8884d8" activeDot={{ r: 10 }} />
+              <Line type="monotone" dataKey="溫度" stroke="#82ca9d" />
+            </LineChart>
+            </ResponsiveContainer>
          </div>
         
       );
