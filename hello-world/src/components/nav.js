@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { AppBar, Tab, Tabs } from '@material-ui/core';
+import cookie from 'js-cookie';
 
 class Nav extends Component  {
   constructor() {
@@ -15,6 +16,9 @@ class Nav extends Component  {
 
   componentDidMount (){
     // console.log('in nav js', this.props.loginCheck)
+    if(cookie.get('nav')){
+      this.setState({current: cookie.get('nav')});
+    }
     
   }
 
@@ -22,18 +26,23 @@ class Nav extends Component  {
     switch(e.target.innerText){
       case 'HOME':
         this.setState({current: '/'})
+        cookie.set('nav', '/')
         return;
       case 'PROFILE':
         this.setState({current: '/profile'})
+        cookie.set('nav', '/profile')
         return;
       case 'WEATHER':
         this.setState({current: '/weather'})
+        cookie.set('nav', '/weather')
         return;
       case 'SIGNUP':
       this.setState({current: '/signup'})
+      cookie.set('nav', '/signup')
       return;
       case 'ECOMMERCEINPUT':
       this.setState({current: '/eCommerceInput'})
+      cookie.set('nav', '/eCommerceInput')
       return;
       default:
         this.setState({current: '/'})
