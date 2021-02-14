@@ -3,8 +3,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import Chart from './chart.js';
+import SunOrRain from './sunOrRain.js';
 import axios from 'axios';
 import {apikey} from "../../../api/apikey.js";
+
 class information extends Component  {
   constructor() {
     super();
@@ -75,24 +77,10 @@ class information extends Component  {
             
             <div className="container mt-30">
               <div className="col-md-6">
-                <div className="title-small">
-                  <span>晴天時段</span>
-                </div>
-                <div className="sun-content">
-                  <div className="container-sun">
-                    <svg className="svg-sun" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
-                    <circle cx="50" cy="50" r="35" id="sun"></circle>
-                    </svg>
-                  </div>
-                  <div className="container-time">
-                    {/* <h5>sdssd</h5> */}
-                    {sunPeriod}
-                  </div>
-                </div>
-                
+                <SunOrRain condition="sun" period={sunPeriod}/>
               </div>
               <div className="col-md-6">
-                <span>Sun</span>
+              <SunOrRain condition="rain" period={sunPeriod}/>
               </div>
             </div>
             <div className="col-md-12">

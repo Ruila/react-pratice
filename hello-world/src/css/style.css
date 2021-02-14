@@ -281,6 +281,8 @@ button {
 
 #information .sun-content {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #information .sun-content .container-time {
@@ -296,4 +298,23 @@ button {
     background-color: #f8d14c;
     color: #ffffff;
     border-radius: 7px;
+    cursor: pointer;
+}
+
+
+#sunOrRainModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sunOrRainModal .modal_content {
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 5px 25px;
+    background-color: #ffffff;
+}
+
+#sunOrRainModal .modal_content:focus {
+    outline: none;
 }
