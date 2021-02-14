@@ -54,24 +54,45 @@ class information extends Component  {
     })
   }
   render(){
+    // let sunPeriod = []
     const props = this.props.location.state.detail_info;
     console.log('wtfff', this.props.location.state.detail_info)
+    const sunPeriod = props.weatherElement[1].time.map((v,idx) => {
+      if(v.elementValue[0].value === '晴') {
+        return <h5 key={idx}>{v.startTime} ~ {v.endTime}</h5>
+      }
+    });
+
     if(this.props.loginCheck){
       return (
         <div id="information">
           <div className="container">
             <div className="col-md-12">
               <div className="title">
-                <h5>{props.locationName}</h5>
+                <span>{props.locationName}</span>
               </div>
             </div>
             
-            <div className="container">
+            <div className="container mt-30">
               <div className="col-md-6">
-                <h5>Sun</h5>
+                <div className="title-small">
+                  <span>晴天時段</span>
+                </div>
+                <div className="sun-content">
+                  <div className="container-sun">
+                    <svg className="svg-sun" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                    <circle cx="50" cy="50" r="35" id="sun"></circle>
+                    </svg>
+                  </div>
+                  <div className="container-time">
+                    {/* <h5>sdssd</h5> */}
+                    {sunPeriod}
+                  </div>
+                </div>
+                
               </div>
               <div className="col-md-6">
-                <h5>Sun</h5>
+                <span>Sun</span>
               </div>
             </div>
             <div className="col-md-12">

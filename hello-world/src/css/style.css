@@ -41,9 +41,6 @@
     max-width: 50%;
     position: relative;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .col-md-12 {
@@ -263,7 +260,7 @@ button {
     width: 100%;
 }
 
-#information .title h5 {
+#information .title span {
     font-size: 36px;
     margin: 25px 0 45px 0;
     color: #3e4245;
@@ -276,4 +273,27 @@ button {
 
 .flex-direction-column {
     flex-direction: column;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+#information .sun-content {
+    display: flex;
+}
+
+#information .sun-content .container-time {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#information .sun-content .container-time h5 {
+    padding: 5px 10px;
+    background-color: #f8d14c;
+    color: #ffffff;
+    border-radius: 7px;
 }
