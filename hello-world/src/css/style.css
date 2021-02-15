@@ -335,6 +335,7 @@ button {
     right: 20px;
     bottom: 20px;
     cursor: pointer;
+    z-index: 1199;
 }
 
 #SideBarBtn .button:hover {
@@ -352,6 +353,7 @@ button {
 #drawerContent .unit span {
     padding: 5px 10px;
     border-radius: 7px;
+    font-weight: 500;
 }
 #drawerContent .unit span:hover {
     background-color: #000000;
