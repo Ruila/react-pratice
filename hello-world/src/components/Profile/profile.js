@@ -44,19 +44,19 @@ class Profile extends Component  {
             </div>
             <div className="socialMediaBlock">
               <div className="socialMedia">
-                <div class="unit">
+                <div className="unit">
                   <FacebookIcon />
                 </div>
-                <div class="unit">
+                <div className="unit">
                   <InstagramIcon />
                 </div>
-                <div class="unit">
+                <div className="unit">
                   <TwitterIcon />
                 </div>
-                <div class="unit">
+                <div className="unit">
                   <LinkedInIcon />
                 </div>
-                <div class="unit">
+                <div className="unit">
                   <GitHubIcon />
                 </div>
               </div> 

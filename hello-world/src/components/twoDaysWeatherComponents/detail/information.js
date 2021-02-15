@@ -65,6 +65,13 @@ class information extends Component  {
       }
     });
 
+    const rainPeriod = props.weatherElement[1].time.map((v,idx) => {
+      if(v.elementValue[0].value === '短暫雨') {
+        return <h5 key={idx}>{v.startTime} ~ {v.endTime}</h5>
+      }
+    });
+    console.log('check rain ', rainPeriod)
+
     if(this.props.loginCheck){
       return (
         <div id="information">
@@ -80,7 +87,7 @@ class information extends Component  {
                 <SunOrRain condition="sun" period={sunPeriod}/>
               </div>
               <div className="col-md-6">
-              <SunOrRain condition="rain" period={sunPeriod}/>
+              <SunOrRain condition="rain" period={rainPeriod}/>
               </div>
             </div>
             <div className="col-md-12">
