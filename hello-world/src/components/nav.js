@@ -71,15 +71,19 @@ class Nav extends Component  {
     })
     return (
             <div className={`m-nav ${this.props.loginCheck?'':'hide'}`} >
-                <MuiThemeProvider theme={theme}>
+              <MuiThemeProvider theme={theme}>
                   <AppBar position="static">
-                    <Tabs value={this.state.current} onChange={this.handleChange} aria-label="simple tabs example" indicatorColor="secondary">
+                    <Tabs value={this.state.current} 
+                          onChange={this.handleChange} 
+                          aria-label="simple tabs example" 
+                          indicatorColor="secondary"
+                          variant="scrollable"
+                          scrollButtons="auto">
                       <Tab label="Home" value={this.state.value[0]} component={Link} to={this.state.value[0]}/>
                       <Tab label="Profile" value="/profile" component={Link} to={this.state.value[1]} />
                       <Tab label="Weather" value="/weather" component={Link} to={this.state.value[2]} />
                       <Tab label="SignUp" value="/signup" component={Link} to={this.state.value[3]} />
                       <Tab label="eCommerceInput" value="/eCommerceInput" component={Link} to={this.state.value[4]} />
-                      {/* <Tab label="" icon={ <AccountCircleOutlinedIcon />} /> */}
                     </Tabs>
                   </AppBar>
                 </MuiThemeProvider>

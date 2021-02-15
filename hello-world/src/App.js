@@ -1,5 +1,6 @@
 import './App.css';
 import Nav from './components/nav.js';
+import SideBar from './components/SideBar/sidebar.js';
 import Login from './components/Login/login.js';
 import Home from './components/Home/home.js';
 import Weather from './components/twoDaysWeatherComponents/weatherFrame.js';
@@ -30,6 +31,7 @@ class App extends Component  {
     return (
       <div>
         <Nav />
+        <SideBar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/profile" component={Profile} />
