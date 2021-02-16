@@ -19,6 +19,7 @@ class Login extends Component  {
       message: "",
       emailAlert: true,
       passwordAlert: true,
+      current_route: "/"
     }
     this.checkLogin=this.checkLogin.bind(this);
     this.handleAccount=this.handleAccount.bind(this);
@@ -61,7 +62,7 @@ class Login extends Component  {
     } else if (this.state.password === "") {
       this.setState({passwordAlert: false});
     } else {
-      axios.post('http://localhost:8000/api/user/logincheck', obj, {
+      axios.post('http://localhost:8000/api/user/login', obj, {
         withCredentials: true,
       })
       .then(v=>{
@@ -81,9 +82,15 @@ class Login extends Component  {
   
   render(){
     if(this.props.loginCheck){
-      return (
-        <Redirect to={'/'} />
-     );
+      if(cookie.get('nav')){
+        return <Redirect to={`${cookie.get('nav')}`} />
+        console.log('gggg', cookie.get('nav'))
+      } else {
+        return (
+          <Redirect to={'/'} />
+       );
+      }
+      
      
     } else {
       return (
