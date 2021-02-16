@@ -29,11 +29,6 @@ class Login extends Component  {
   }
 
   componentDidMount () {
-    console.log(this.state.account)
-    console.log('cookie', cookie.get('cookie1'));
-    if(cookie.get('cookie1') === 'abc1234'){
-      this.props.dispatch({type: 'Login'});
-    }
   }
 
   handleAccount (event){
@@ -81,10 +76,10 @@ class Login extends Component  {
   }
   
   render(){
-    if(this.props.loginCheck){
+    console.log('in login ======== logincheck', this.props.loginCheck.state)
+    if(this.props.loginCheck.state){
       if(cookie.get('nav')){
         return <Redirect to={`${cookie.get('nav')}`} />
-        console.log('gggg', cookie.get('nav'))
       } else {
         return (
           <Redirect to={'/'} />

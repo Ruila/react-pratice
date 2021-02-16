@@ -18,7 +18,6 @@ class Nav extends Component  {
   componentDidMount (){
     // console.log('in nav js', this.props.loginCheck)
     if(cookie.get('nav')){
-      console.log('nacc', cookie.get('nav'))
       this.setState({current: cookie.get('nav')});
     }
     

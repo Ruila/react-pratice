@@ -9,10 +9,14 @@ class loading extends Component  {
     }
     
   }
+
+  componentDidMount () {
+    console.log('check in loading', this.props.load)
+  }
   
   render(){
     return (
-      <div className={`loading ${this.props.load?'':'hide'}`}>
+      <div className={`loading ${this.props.load.state?'':'hide'}`}>
         <h1>Loading............</h1>
          <div className="overlay"></div>
          
@@ -26,7 +30,6 @@ class loading extends Component  {
 function mapStateToProps(state) {
   return {
     load: state.load,
-    loginCheck: state.loginCheck
   }
 }
 

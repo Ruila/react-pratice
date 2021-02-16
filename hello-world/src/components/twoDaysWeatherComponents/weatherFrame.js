@@ -17,6 +17,7 @@ class weatherFrame extends Component {
   } 
   componentDidMount() {
     if(cookie.get('area')) {
+      console.log('cookie in weather', cookie.get('area'))
       this.setState({currentArea: cookie.get('area')})
     }
   }
@@ -24,8 +25,8 @@ class weatherFrame extends Component {
       this.setState({currentArea: area})
   }
   render(){
-    console.log('in weather', this.props.loginCheck)
-    if(this.props.loginCheck){
+    console.log('in weather logincheck', this.props.loginCheck)
+    if(this.props.loginCheck.state){
       return(
         <div id="weather">
           <Btn data-testid="btn" area={this.state.currentArea} changeArea={this.changeArea}/>

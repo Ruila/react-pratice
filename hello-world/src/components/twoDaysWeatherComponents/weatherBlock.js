@@ -44,16 +44,17 @@ class weatherBlock extends Component {
       this.check=this.check.bind(this);
     }
     check(){
+      console.log('weather block cookie', this.props.area)
       this.getData(this.props.area);
     }
     getData(area){
-      // this.props.dispatch({type: 'Loading'});
+      this.props.dispatch({type: 'Loading'});
       axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/${this.state.areaDict[area]}?Authorization=${apikey}`)
       .then((v)=>{
         this.setState({info: v.data.records.locations[0]})
        
       }).then(()=>{
-        // this.props.dispatch({type: 'Done'});
+        this.props.dispatch({type: 'Done'});
       })
     }
     componentDidMount(){

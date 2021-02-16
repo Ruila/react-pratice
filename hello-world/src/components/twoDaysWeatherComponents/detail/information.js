@@ -72,7 +72,7 @@ class information extends Component  {
     });
     console.log('check rain ', rainPeriod)
 
-    if(this.props.loginCheck){
+    if(this.props.loginCheck.state){
       return (
         <div id="information">
           <div className="container">

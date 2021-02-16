@@ -100,7 +100,7 @@ class Chart extends Component  {
 
     // console.log('check oooobj', inputData)
     
-    if(this.props.loginCheck){
+    if(this.props.loginCheck.state){
       return (
           <div id="lineChart">
             <ResponsiveContainer  width="100%" height={300}>

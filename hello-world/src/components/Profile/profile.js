@@ -19,7 +19,7 @@ class Profile extends Component  {
 
   
   render(){
-    if(this.props.loginCheck){
+    if(this.props.loginCheck.state){
         return (
           <div id="profile">
             <div className="p-container">

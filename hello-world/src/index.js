@@ -5,37 +5,57 @@ import Loading from './components/twoDaysWeatherComponents/loading.js';
 import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { BrowserRouter } from "react-router-dom";
+import cookie from 'js-cookie';
 
-const initialState = {
-  load: false,
-  loginCheck: false,
-};
-
-function reducer(state = initialState, action) {
+function loadingReducer(state = {}, action) {
   switch(action.type){
-    case 'Login':
-      return {
-        loginCheck: true
-      }
     case 'Loading':
+      console.log('dispatch loding');
       return{
-        load: true
+        state: true,
       };
     case 'Done':
       return {
-        load: false
+        state: false,
       };
     default:
       return{
-        load: false,
-        loginCheck: false,
+        state: false,
       };
   }
 }
 
-const store = createStore(reducer);
+function loginReducer(state = {}, action) {
+  switch(action.type){
+    case 'Login':
+      return {
+        state: true,
+      }
+    default:
+      if(cookie.get('cookie1') === 'abc1234') {
+        return{
+          state: true,
+        };
+      } else {
+        return{
+          state: false,
+        };
+      }
+      
+  }
+}
+
+const reducers = combineReducers({
+  load: loadingReducer,
+  loginCheck: loginReducer,
+})
+
+const store = createStore(reducers, {
+  load: false,
+  loginCheck: false,
+});
 
 ReactDOM.render(
   // <React.StrictMode>

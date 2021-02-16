@@ -15,8 +15,8 @@ class Home extends Component  {
   }
   
   render(){
-    // console.log('in home', this.props.loginCheck);
-    if(this.props.loginCheck){
+    console.log('in home', this.props.loginCheck);
+    if(this.props.loginCheck.state){
       return (
         <div>
           <div style={{ position: 'relative', width: '100%', height: 500 }}>
