@@ -1,8 +1,8 @@
 
-const loadingReducer = (state = {}, action) => {
+const loadingReducer = (state, action) => {
+  console.log('loading action', state)
   switch(action.type){
     case 'Loading':
-      console.log('dispatch loding');
       return{
         state: true,
       };

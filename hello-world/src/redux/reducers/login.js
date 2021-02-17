@@ -1,5 +1,5 @@
 import cookie from 'js-cookie';
-const loginReducer = (state = {}, action) => {
+const loginReducer = (state , action) => {
   switch(action.type){
     case 'Login':
       return {
