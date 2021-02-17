@@ -12,7 +12,7 @@ const loginReducer = (state , action) => {
         };
       } else {
         return{
-          state: true,
+          state: false,
         };
       }
       

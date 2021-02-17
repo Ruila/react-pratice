@@ -62,7 +62,7 @@ class Login extends Component  {
       })
       .then(v=>{
         console.log('logindd',v);
-        if(v.data === 'succeed'){
+        if(v.data.text === 'succeed'){
           this.props.dispatch({type: 'Login'});
         } else {
           this.setState({message: v.data || 'nothing'});

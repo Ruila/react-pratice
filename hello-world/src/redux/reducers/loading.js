@@ -1,6 +1,5 @@
 
 const loadingReducer = (state, action) => {
-  console.log('loading action', state)
   switch(action.type){
     case 'Loading':
       return{

@@ -15,7 +15,6 @@ class Home extends Component  {
   }
   
   render(){
-    console.log('in home', this.props.loginCheck);
     if(this.props.loginCheck.state){
       return (
         <div>

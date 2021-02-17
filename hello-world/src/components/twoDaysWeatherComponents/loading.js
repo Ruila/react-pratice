@@ -11,7 +11,6 @@ class loading extends Component  {
   }
 
   componentDidMount () {
-    console.log('check in loading', this.props.load)
   }
   
   render(){

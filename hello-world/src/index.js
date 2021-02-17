@@ -10,53 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 import cookie from 'js-cookie';
 import reducers from './redux/reducers/index.js';
 
-// function loadingReducer(state = {}, action) {
-//   switch(action.type){
-//     case 'Loading':
-//       console.log('dispatch loding');
-//       return{
-//         state: true,
-//       };
-//     case 'Done':
-//       return {
-//         state: false,
-//       };
-//     default:
-//       return{
-//         state: false,
-//       };
-//   }
-// }
-
-// function loginReducer(state = {}, action) {
-//   switch(action.type){
-//     case 'Login':
-//       return {
-//         state: true,
-//       }
-//     default:
-//       if(cookie.get('cookie1') === 'abc1234') {
-//         return{
-//           state: true,
-//         };
-//       } else {
-//         return{
-//           state: true,
-//         };
-//       }
-      
-//   }
-// }
-
-// const reducers = combineReducers({
-//   load: loadingReducer,
-//   loginCheck: loginReducer,
-// })
-
-const store = createStore(reducers, {
-  load: false,
-  loginCheck: false,
-});
+const store = createStore(reducers);
 
 ReactDOM.render(
   // <React.StrictMode>
