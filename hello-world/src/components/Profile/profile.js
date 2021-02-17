@@ -35,9 +35,8 @@ class Profile extends Component  {
                     <h5>Software Engineer | Frontend Engineer | Photographer</h5>
                   </div>
                 </div>
-                <div className="socialMedia">
-            
-                  
+                <div className="autobiography">
+                  <h5>我認為人的成長源自於對生活的熱忱，保有熱忱才有學習的動力。於2020年畢業於國立中正大學資工系，研究專題為嵌入式系統領域，當時因為學校附近時常有工廠在焚燒廢棄物，造成學校附近空汙問題，因此我和組員們使用了Raspberry Pi 和 Android打造了一個「空汙探測器」，希望找出校園附近的空汙來源。</h5>
                 </div>
               </div>
             

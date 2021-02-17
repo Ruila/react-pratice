@@ -2,13 +2,22 @@
     position: relative;
     padding: 50px 0;
 }
-#profile .img-description{
+
+#profile .col-md-12 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile .img-description {
     display: flex;
     width: 100%;
     padding: 15px 0;
+    max-width: 800px;
 }
 
-#profile .img-description .img{
+#profile .img-description .img {
     flex: 1;
     display: flex;
     justify-content: flex-end;
@@ -21,7 +30,7 @@
     background-color: #000000;
 }
 
-#profile .img-description .description{
+#profile .img-description .description {
     flex: 2;
     padding: 15px;
     position: relative;
@@ -30,9 +39,11 @@
 #profile .img-description .description h5 {
     margin: 10px;
 }
+
 #profile .img-description .description .name {
     font-size: 24px;
 }
+
 #profile .socialMediaBlock {
     width: 100%;
     position: fixed;
@@ -40,15 +51,18 @@
     display: flex;
     justify-content: center;
 }
-#profile .socialMedia{
+
+#profile .socialMedia {
     display: flex;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
-#profile .socialMedia .unit{
+
+#profile .socialMedia .unit {
     padding: 7px 10px;
     cursor: pointer;
     position: relative;
 }
+
 #profile .socialMedia .unit:hover {
     /* background-color: #5a5a5a; */
     animation-name: socialMedia-animation;
@@ -56,6 +70,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
+
 @keyframes socialMedia-animation {
     from {
         top: 0px;
@@ -68,8 +83,12 @@
     }
 }
 
-#profile .p-container{
+#profile .p-container {
     width: 100%;
     margin: auto;
     max-width: 1200px;
-} 
+}
+
+#profile .autobiography {
+  max-width: 800px;
+}
