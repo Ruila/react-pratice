@@ -40,7 +40,7 @@ function loginReducer(state = {}, action) {
         };
       } else {
         return{
-          state: false,
+          state: true,
         };
       }
       

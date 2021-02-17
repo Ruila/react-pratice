@@ -1,0 +1,23 @@
+#counter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 50px;
+}
+#counter .caculate {
+	display: flex;
+
+}
+
+#counter .caculate div {
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	border: 1px solid #000000;
+}

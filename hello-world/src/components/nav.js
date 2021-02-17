@@ -10,7 +10,7 @@ class Nav extends Component  {
     super();
     this.state = {
       current: '/',
-      value: ['/', '/profile', '/weather', '/signup', '/eCommerceInput'],
+      value: ['/', '/profile', '/weather', '/signup', '/eCommerceInput', '/counter'],
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -44,6 +44,10 @@ class Nav extends Component  {
       case 'ECOMMERCEINPUT':
       this.setState({current: '/eCommerceInput'})
       cookie.set('nav', '/eCommerceInput')
+      return;
+      case 'COUNTER':
+      this.setState({current: '/counter'})
+      cookie.set('nav', '/counter')
       return;
       default:
         this.setState({current: '/'})
@@ -84,6 +88,7 @@ class Nav extends Component  {
                       <Tab label="Weather" value="/weather" component={Link} to={this.state.value[2]} />
                       <Tab label="SignUp" value="/signup" component={Link} to={this.state.value[3]} />
                       <Tab label="eCommerceInput" value="/eCommerceInput" component={Link} to={this.state.value[4]} />
+                      <Tab label="Counter" value="/counter" component={Link} to={this.state.value[5]} />
                     </Tabs>
                   </AppBar>
                 </MuiThemeProvider>

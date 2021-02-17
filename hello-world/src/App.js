@@ -7,6 +7,7 @@ import Weather from './components/twoDaysWeatherComponents/weatherFrame.js';
 import Profile from './components/Profile/profile.js';
 import SignUp from './components/SingUp/signup.js';
 import eCommerceInput from './components/E-commerceInput/block.js';
+import Counter from './components/Counter/counter.js';
 import Information from "./components/twoDaysWeatherComponents/detail/information.js";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -39,6 +40,7 @@ class App extends Component  {
           <Route path="/eCommerceInput" component={eCommerceInput} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/counter" component={Counter} />
           <Route path="/weather/:id" render={(props)=>{
             return ( <Information {...props} />)
           }} />
