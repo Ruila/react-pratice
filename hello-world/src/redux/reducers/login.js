@@ -6,10 +6,12 @@ const loginReducer = (state , action) => {
         state: true,
       }
     default:
-      if(cookie.get('cookie1') === 'abc1234') {
-        return{
-          state: true,
-        };
+      if(cookie.get('user')) {
+        if(JSON.parse(cookie.get('user')).text === 'succeed'){
+          return{
+            state: true,
+          };
+        }
       } else {
         return{
           state: false,

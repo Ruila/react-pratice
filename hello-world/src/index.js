@@ -5,9 +5,8 @@ import Loading from './components/twoDaysWeatherComponents/loading.js';
 import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import { createStore } from 'redux';
 import { BrowserRouter } from "react-router-dom";
-import cookie from 'js-cookie';
 import reducers from './redux/reducers/index.js';
 
 const store = createStore(reducers);

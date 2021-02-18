@@ -44,7 +44,6 @@ class weatherBlock extends Component {
       this.check=this.check.bind(this);
     }
     check(){
-      console.log('weather block cookie', this.props.area)
       this.getData(this.props.area);
     }
     getData(area){

@@ -17,7 +17,6 @@ class weatherFrame extends Component {
   } 
   componentDidMount() {
     if(cookie.get('area')) {
-      console.log('cookie in weather', cookie.get('area'))
       this.setState({currentArea: cookie.get('area')})
     }
   }

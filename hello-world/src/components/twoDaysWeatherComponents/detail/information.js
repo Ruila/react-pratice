@@ -51,7 +51,9 @@ class information extends Component  {
           console.log('wtf', v)
           this.setState({data: v})
         }
+        return 0
       })
+      
     }).then(()=>{
     })
   }
@@ -63,12 +65,14 @@ class information extends Component  {
       if(v.elementValue[0].value === '晴') {
         return <h5 key={idx}>{v.startTime} ~ {v.endTime}</h5>
       }
+      return 0
     });
 
     const rainPeriod = props.weatherElement[1].time.map((v,idx) => {
       if(v.elementValue[0].value === '短暫雨') {
         return <h5 key={idx}>{v.startTime} ~ {v.endTime}</h5>
       }
+      return 0
     });
     console.log('check rain ', rainPeriod)
 

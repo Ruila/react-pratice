@@ -76,7 +76,6 @@ class Login extends Component  {
   }
   
   render(){
-    console.log('in login ======== logincheck', this.props.loginCheck.state)
     if(this.props.loginCheck.state){
       if(cookie.get('nav')){
         return <Redirect to={`${cookie.get('nav')}`} />

@@ -2,19 +2,49 @@ import React, { Component } from 'react';
 import '../../css/profile.css';
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
+import axios from 'axios';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import cookie from 'js-cookie';
 class Profile extends Component  {
   constructor() {
     super();
     this.state = {
+      name: "null",
+      inroduction: "null",
+      autobiography: "null",
     }
+    this.getData = this.getData.bind(this);
   }
 
+  componentDidMount() {
+    this.getData()
+  }
 
+  getData(){
+    let obj={};
+    if(cookie.get('user')) {
+      obj = {
+        userid: JSON.parse(cookie.get('user')).userid,
+        token: JSON.parse(cookie.get('user')).token
+      }
+    }
+    axios.post('http://localhost:8000/api/user/profile', obj, {
+        withCredentials: true,
+      })
+      .then(v=>{
+        console.log('check profile', v)
+        if(v.data.message === "failed"){
+          console.log('faied get profile', v.data.text)
+        } else if(v.data.message === "succeed") {
+          this.setState({name: v.data.content.u_name, inroduction: v.data.content.u_intro, autobiography: v.data.content.u_autobio})
+        }
+        
+      })
+  }
 
 
   
@@ -31,12 +61,12 @@ class Profile extends Component  {
                     </div>
                   </div>
                   <div className="description">
-                    <h5 className="name">William Lin</h5>
-                    <h5>Software Engineer | Frontend Engineer | Photographer</h5>
+                    <h5 className="name">{this.state.name}</h5>
+                    <h5>{this.state.inroduction}</h5>
                   </div>
                 </div>
                 <div className="autobiography">
-                  <h5>我認為人的成長源自於對生活的熱忱，保有熱忱才有學習的動力。於2020年畢業於國立中正大學資工系，研究專題為嵌入式系統領域，當時因為學校附近時常有工廠在焚燒廢棄物，造成學校附近空汙問題，因此我和組員們使用了Raspberry Pi 和 Android打造了一個「空汙探測器」，希望找出校園附近的空汙來源。</h5>
+                  <h5>{this.state.autobiography}</h5>
                 </div>
               </div>
             
