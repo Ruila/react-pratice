@@ -24,7 +24,6 @@ class weatherFrame extends Component {
       this.setState({currentArea: area})
   }
   render(){
-    console.log('in weather logincheck', this.props.loginCheck)
     if(this.props.loginCheck.state){
       return(
         <div id="weather">

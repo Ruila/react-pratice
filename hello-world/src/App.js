@@ -22,7 +22,7 @@ class App extends Component  {
     
   }
   componentDidMount (){
-    // console.log('in app js', this.props.loginCheck)
+    // console.log('in app js', this.props.loginCheck) 
   }
   checkLoginState(){
 

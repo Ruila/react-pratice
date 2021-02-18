@@ -74,7 +74,7 @@ class Nav extends Component  {
       }
     })
     return (
-            <div className={`m-nav ${this.props.loginCheck?'':'hide'}`} >
+            <div className={`m-nav ${this.props.loginCheck.state?'':'hide'}`} >
               <MuiThemeProvider theme={theme}>
                   <AppBar position="static">
                     <Tabs value={this.state.current} 

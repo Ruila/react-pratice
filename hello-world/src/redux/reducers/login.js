@@ -5,6 +5,10 @@ const loginReducer = (state , action) => {
       return {
         state: true,
       }
+    case 'Logout':
+      return {
+        state: false,
+      }  
     default:
       if(cookie.get('user')) {
         if(JSON.parse(cookie.get('user')).text === 'succeed'){

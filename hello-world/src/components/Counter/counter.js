@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../../css/counter.css';
+import { connect } from 'react-redux';
+import { Redirect } from "react-router-dom";
 export default function Counter(props) {
     const [count, setCount] = useState(0)
 

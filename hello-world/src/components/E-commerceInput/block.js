@@ -1,8 +1,10 @@
 import '../../css/eCommerce.css';
 import Input from './input.js';
+import { connect } from 'react-redux';
 import Content from './content';
 import React, { Component } from 'react';
-import Json from './biggo_sitetype.json'
+import Json from './biggo_sitetype.json';
+import { Redirect } from "react-router-dom";
 
 class block extends Component {
   constructor(props) {
@@ -23,13 +25,26 @@ class block extends Component {
     this.setState({currentList: list})
 }
   render(){
-    return(
-      <div className="block-layout">
-        <Input alldata = {Json} updateInput = {this.updateInput} updateCurrentList = {this.updateCurrentList}/>
-        <Content alldata = {Json} currentInput = {this.state.currentInput} currentList = {this.state.currentList}/>
-      </div>
-    );
+    if(this.props.loginCheck.state){
+      return(
+        <div className="block-layout">
+          <Input alldata = {Json} updateInput = {this.updateInput} updateCurrentList = {this.updateCurrentList}/>
+          <Content alldata = {Json} currentInput = {this.state.currentInput} currentList = {this.state.currentList}/>
+        </div>
+      );
+    } else {
+      return (
+        <Redirect to={'/login'} />
+     );
+    }
+    
   }
 }
 
-export default block;
+function mapStateToProps(state) {
+  return {
+    loginCheck: state.loginCheck
+  }
+}
+
+export default connect(mapStateToProps)(block);
