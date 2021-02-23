@@ -10,8 +10,8 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import cookie from 'js-cookie';
 class Profile extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: "null",
       inroduction: "null",

@@ -3,8 +3,8 @@ import DropdownUnit from './dropdownUnit'
 import React, { Component } from 'react';
 
 class input extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.textInput = React.createRef();
     this.state = {
       inputValue: "",

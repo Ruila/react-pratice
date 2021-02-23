@@ -8,8 +8,8 @@ import axios from 'axios';
 import {apikey} from "../../../api/apikey.js";
 
 class information extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       areaDict: {
         "宜蘭縣": "F-D0047-001",

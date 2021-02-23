@@ -8,8 +8,8 @@ import { connect } from 'react-redux';
 
 
 class weatherBlock extends Component {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.state = {
         areaDict: {
           "宜蘭縣": "F-D0047-001",

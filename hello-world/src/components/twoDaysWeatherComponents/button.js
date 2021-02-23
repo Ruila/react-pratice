@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import cookie from 'js-cookie';
 
 class vbtn extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       aalert: false,
       inputValue: "",

@@ -8,8 +8,8 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
 class SignUp extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       userid: "",
       password: "",

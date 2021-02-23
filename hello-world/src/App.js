@@ -14,8 +14,8 @@ import { connect } from 'react-redux';
 import { Route, Switch } from "react-router-dom";
 
 class App extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
      
     }
@@ -58,4 +58,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(App);
-// export default player_block;

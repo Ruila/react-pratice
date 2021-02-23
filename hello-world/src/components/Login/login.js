@@ -10,8 +10,8 @@ import cookie from 'js-cookie';
 
 
 class Login extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       account: "",
       password: "",

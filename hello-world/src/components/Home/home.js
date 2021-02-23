@@ -6,8 +6,8 @@ import { red, blue, green } from "@material-ui/core/colors";
 import Button from "@material-ui/core/Button";
 
 class Home extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
      open: false
     }

@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 class Chart extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
      
     }

@@ -4,8 +4,8 @@ import Drawer from '@material-ui/core/Drawer';
 import cookie from 'js-cookie';
 
 class SideBar extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
         status: false
     }

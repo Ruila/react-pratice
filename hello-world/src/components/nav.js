@@ -6,8 +6,8 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import cookie from 'js-cookie';
 
 class Nav extends Component  {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       current: '/',
       value: ['/', '/profile', '/weather', '/signup', '/eCommerceInput', '/counter'],
